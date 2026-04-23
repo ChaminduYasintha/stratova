@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --color-stratova-dark: #0a0f25;
+  --color-stratova-blue: #1b8bba;
+  --color-stratova-green: #72a93b;
+  --color-stratova-blue-dark: #146c91;
+  --breakpoint-xs: 480px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #ffffff;
+  color: #0a0f25;
+  overflow-x: hidden;
+}
