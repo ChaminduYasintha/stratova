@@ -59,24 +59,24 @@ export const Contact = () => {
 
       {/* Right Content */}
       <div className="w-full md:w-1/2 flex justify-center items-center relative z-10 mt-16 md:mt-0 p-8 md:p-12">
-        <div className="w-full max-w-lg bg-stratova-dark p-8 md:p-12 rounded-xl shadow-[0_20px_50px_rgba(10,17,40,0.5)] border border-stratova-blue/30 backdrop-blur-sm">
+        <div className="w-full max-w-lg bg-gradient-to-br from-stratova-dark to-[#0f1730] p-8 md:p-12 rounded-3xl shadow-[0_30px_60px_rgba(10,17,40,0.6)] border border-stratova-blue/20 backdrop-blur-md">
           <h3 className="text-3xl font-bold text-white mb-2">Send an Inquiry</h3>
-          <p className="text-white/70 mb-8">Fill out the form below and we will get back to you shortly.</p>
+          <p className="text-white/70 mb-8 font-medium">Fill out the form below and we will get back to you shortly.</p>
           
-          <form className="space-y-6 flex flex-col" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-5 flex flex-col" onSubmit={(e) => e.preventDefault()}>
             <div className="relative">
-              <input type="text" id="name" className="w-full bg-transparent border-b-2 border-white/30 text-white px-2 py-3 mb-1 focus:outline-none focus:border-stratova-blue placeholder-white/40 font-medium transition-colors" placeholder="Full Name" required />
+              <input type="text" id="name" className="w-full bg-white/5 border border-white/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:border-stratova-blue focus:bg-white/10 placeholder-white/40 font-medium transition-all duration-300" placeholder="Full Name" required />
             </div>
             
             <div className="relative">
-               <input type="email" id="email" className="w-full bg-transparent border-b-2 border-white/30 text-white px-2 py-3 mb-1 focus:outline-none focus:border-stratova-blue placeholder-white/40 font-medium transition-colors" placeholder="Email Address" required />
+               <input type="email" id="email" className="w-full bg-white/5 border border-white/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:border-stratova-blue focus:bg-white/10 placeholder-white/40 font-medium transition-all duration-300" placeholder="Email Address" required />
             </div>
 
             <div className="relative">
-               <textarea id="message" rows={4} className="w-full bg-transparent border-b-2 border-white/30 text-white px-2 py-3 mb-1 focus:outline-none focus:border-stratova-blue placeholder-white/40 font-medium resize-none transition-colors" placeholder="Your Message" required></textarea>
+               <textarea id="message" rows={4} className="w-full bg-white/5 border border-white/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:border-stratova-blue focus:bg-white/10 placeholder-white/40 font-medium resize-none transition-all duration-300" placeholder="Your Message" required></textarea>
             </div>
 
-            <button type="submit" className="w-full bg-stratova-blue text-white font-bold tracking-wide text-lg rounded px-4 py-4 mt-6 hover:bg-[#156e9c] transition-all transform hover:-translate-y-1 shadow-lg ring-2 ring-transparent focus:ring-white">
+            <button type="submit" className="w-full bg-stratova-blue text-white font-bold tracking-wide text-lg rounded-xl px-4 py-4 mt-4 hover:bg-[#156e9c] transition-all duration-300 transform hover:-translate-y-1 shadow-[0_10px_20px_rgba(27,139,186,0.3)] hover:shadow-[0_15px_30px_rgba(27,139,186,0.4)] ring-2 ring-transparent focus:ring-white">
               SEND MESSAGE
             </button>
           </form>

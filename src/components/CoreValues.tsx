@@ -33,11 +33,18 @@ export const CoreValues = () => {
   ];
 
   return (
-    <section id="values" className="w-full min-h-screen flex flex-col relative overflow-hidden">
+    <section id="values" className={`w-full min-h-screen flex flex-col relative overflow-visible ${hoveredIndex !== null ? 'z-50' : 'z-10'}`}>
       {/* Top White Section */}
       <div className="w-full bg-white pt-20 pb-40 px-8 md:px-16">
-        <h2 className="text-3xl md:text-4xl font-normal text-stratova-dark mb-2">OUR</h2>
-        <h2 className="text-6xl md:text-8xl font-black text-stratova-dark tracking-tight">CORE VALUES</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-normal text-stratova-dark mb-2">OUR</h2>
+          <h2 className="text-6xl md:text-8xl font-black text-stratova-dark tracking-tight">CORE VALUES</h2>
+        </motion.div>
       </div>
 
       {/* Bottom Dark Blue Section */}
@@ -45,55 +52,80 @@ export const CoreValues = () => {
 
         {/* Diamonds Row */}
         <div className="absolute top-0 left-0 w-full flex justify-center -translate-y-1/2 px-4">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-0 w-full max-w-7xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8, staggerChildren: 0.1 }}
+            className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-0 w-full max-w-7xl"
+          >
             {values.map((value, index) => (
               <div key={index} className="flex justify-center">
                 <motion.div
+                  initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-48 md:h-48 flex items-center justify-center cursor-pointer"
                   onHoverStart={() => setHoveredIndex(index)}
                   onHoverEnd={() => setHoveredIndex(null)}
                   whileHover={{ scale: 1.08 }}
-                  transition={{ type: 'spring', stiffness: 260, damping: 22 }}
                 >
-                  <div className="absolute inset-0 bg-stratova-blue transform rotate-45 shadow-lg" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-stratova-blue to-stratova-blue-dark transform rotate-45 rounded-2xl shadow-[0_10px_30px_rgba(27,139,186,0.3)] transition-all duration-300" />
                   <div className="relative z-10 transform scale-75 md:scale-100">
                     {value.icon}
                   </div>
                 </motion.div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* Text Content Row */}
-        <div className="container mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 mt-8 md:mt-16">
+        <div className="container mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 mt-8 md:mt-16 relative">
           {values.map((value, index) => {
             const isHovered = hoveredIndex === index;
             return (
-              <div
-                key={index}
-                className="text-center flex flex-col items-center px-4"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
+              <div 
+                key={index} 
+                className="relative h-[80px] md:h-[100px]" // Stable wrapper
               >
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 cursor-default">
-                  {value.title}
-                </h3>
-
-                {/* Animated description — expands downward on hover */}
                 <motion.div
-                  initial={false}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   animate={{
-                    opacity: isHovered ? 1 : 0,
-                    height: isHovered ? 'auto' : 0,
-                    y: isHovered ? 0 : -10,
+                    scale: isHovered ? 1.15 : 1,
+                    zIndex: isHovered ? 50 : 0,
+                    y: isHovered ? -20 : 0,
                   }}
-                  transition={{ type: 'spring', stiffness: 200, damping: 26 }}
-                  style={{ overflow: 'hidden' }}
+                  viewport={{ once: false }}
+                  transition={{ 
+                    type: 'spring', 
+                    stiffness: 300, 
+                    damping: 25 
+                  }}
+                  className={`absolute top-0 left-0 w-full text-center flex flex-col items-center px-6 py-8 rounded-2xl transition-shadow duration-300 ${isHovered ? 'bg-stratova-dark/90 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10' : ''}`}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <p className="text-sm md:text-base text-gray-300 font-medium leading-relaxed pb-2">
-                    {value.description}
-                  </p>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 cursor-default">
+                    {value.title}
+                  </h3>
+
+                  {/* Animated description — expands downward on hover */}
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      opacity: isHovered ? 1 : 0,
+                      height: isHovered ? 'auto' : 0,
+                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    style={{ overflow: 'hidden' }}
+                  >
+                    <p className="text-sm md:text-base text-gray-300 font-medium leading-relaxed">
+                      {value.description}
+                    </p>
+                  </motion.div>
                 </motion.div>
               </div>
             );

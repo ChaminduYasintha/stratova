@@ -1,18 +1,7 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'motion/react';
+import React from 'react';
+import { motion } from 'motion/react';
 
 export const About = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: '0px' });
-
-  const fadeLeft: any = {
-    hidden: { opacity: 0, x: -40 },
-    visible: (delay = 0) => ({
-      opacity: 1,
-      x: 0,
-      transition: { duration: 10, ease: [0.22, 1, 0.36, 1], delay },
-    }),
-  };
 
   return (
     <section
@@ -28,28 +17,31 @@ export const About = () => {
       <div className="container mx-auto px-8 md:px-16 relative z-10">
 
         {/* Heading — slides from left, fades out when scrolled away */}
-        <div className="mb-8">
+        <motion.div 
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-12"
+        >
           <h2 className="text-4xl md:text-5xl font-normal text-white mb-2">About</h2>
           <div className="bg-stratova-blue inline-block px-3 py-1 -ml-1">
             <h2 className="text-6xl md:text-7xl font-black text-stratova-dark tracking-tight leading-none">
               Company
             </h2>
           </div>
-        </div>
+        </motion.div>
 
         {/* ROW */}
         <div className="flex flex-col lg:flex-row items-start gap-14 lg:gap-20">
 
           {/* LEFT: paragraphs */}
-          <motion.div 
-            ref={ref}
-            initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
-            variants={fadeLeft}
-            custom={0.2}
-            className="w-full lg:w-1/2 space-y-6"
-          >
-            <p
+          <div className="w-full lg:w-1/2 space-y-6">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg text-gray-300 leading-relaxed font-medium"
             >
               Stratova Private Limited is a bespoke Business consulting firm incorporated in 2026
@@ -57,9 +49,13 @@ export const About = () => {
               a wide spectrum of clients, including small and medium enterprises (SMEs), large
               corporations, institutional investors, high-net-worth individuals and not-for-profit
               organisations.
-            </p>
+            </motion.p>
 
-            <p
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg text-gray-300 leading-relaxed font-medium"
             >
               Our multidisciplinary team brings together expertise from investment banking, capital
@@ -67,54 +63,65 @@ export const About = () => {
               knowledge with practical experience, we provide customised strategies that help
               clients navigate complex financial landscapes, seize emerging opportunities, and
               achieve sustainable growth in today's ever-evolving market.
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
 
           {/* RIGHT: Vision + Mission cards */}
           <div className="w-full lg:w-1/2 flex flex-col gap-6">
 
             {/* Vision card */}
-            <div
-              className="relative bg-stratova-blue rounded-sm overflow-hidden group cursor-default"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, x: 50 }}
+              whileInView={{ opacity: 1, scale: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative bg-gradient-to-br from-stratova-blue to-stratova-blue-dark rounded-3xl shadow-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 cursor-default"
             >
-              <div className="absolute top-0 right-0 w-16 h-16 bg-white/10 transform translate-x-4 -translate-y-4 rotate-45" />
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <h4 className="text-xl font-black text-stratova-dark tracking-widest uppercase">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 transform translate-x-8 -translate-y-8 rotate-45 rounded-3xl" />
+              <div className="p-8 md:p-10 relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-1 bg-white/30 rounded-full" />
+                  <h4 className="text-xl md:text-2xl font-black text-white tracking-widest uppercase drop-shadow-md">
                     Vision
                   </h4>
                 </div>
                 <p
-                  className="text-stratova-dark font-medium leading-relaxed text-base md:text-lg"
+                  className="text-white/95 font-medium leading-relaxed text-base md:text-lg drop-shadow-sm"
                 >
                   To be a trusted partner of choice for businesses and investors by delivering
                   innovative financial and strategic solutions that drive sustainable growth, empower
                   entrepreneurship, and create lasting impact in global markets.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Mission card */}
-            <div
-              className="relative bg-stratova-blue rounded-sm overflow-hidden group cursor-default"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, x: 50 }}
+              whileInView={{ opacity: 1, scale: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="relative bg-gradient-to-br from-stratova-blue to-stratova-blue-dark rounded-3xl shadow-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 cursor-default mt-2"
             >
-              <div className="absolute top-0 right-0 w-16 h-16 bg-white/10 transform translate-x-4 -translate-y-4 rotate-45" />
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <h4 className="text-xl font-black text-stratova-dark tracking-widest uppercase">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 transform translate-x-8 -translate-y-8 rotate-45 rounded-3xl" />
+              <div className="p-8 md:p-10 relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-1 bg-white/30 rounded-full" />
+                  <h4 className="text-xl md:text-2xl font-black text-white tracking-widest uppercase drop-shadow-md">
                     Mission
                   </h4>
                 </div>
                 <p
-                  className="text-stratova-dark font-medium leading-relaxed text-base md:text-lg"
+                  className="text-white/95 font-medium leading-relaxed text-base md:text-lg drop-shadow-sm"
                 >
                   To deliver innovative and tailored financial solutions that empower businesses,
                   entrepreneurs, and investors to achieve sustainable growth and long-term success.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
+
       </div>
     </section>
   );

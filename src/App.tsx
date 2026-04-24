@@ -16,6 +16,7 @@ import { Clients } from './components/Clients';
 import { Partnerships } from './components/Partnerships';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
 import { Menu, X } from 'lucide-react';
 
 export default function App() {
@@ -31,28 +32,29 @@ export default function App() {
   }, []);
 
   const navItems = [
+    { name: 'Home', href: '#' },
     { name: 'About', href: '#about' },
-    { name: 'Vision', href: '#about' },
     { name: 'Values', href: '#values' },
     { name: 'Services', href: '#services-1' },
     { name: 'Team', href: '#team' },
-    // { name: 'Projects', href: '#projects' },
+    { name: 'Partnerships', href: '#partnerships' },
+    { name: 'Why Us', href: '#why-choose-us' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
     <div className="relative">
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'}`}>
-        <div className="container mx-auto px-8 flex justify-between items-center">
-          <a href="#" className="flex items-center h-16 md:h-20 transition-all duration-300 hover:scale-105">
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-4 opacity-90' : 'bg-transparent py-6'}`}>
+        <div className="container mx-auto px-8 md:px-16 flex justify-between items-center">
+          <a href="#" className="flex items-center h-12 md:h-16 transition-all duration-300 hover:scale-105">
             <img src="/STRATOVA LOGO.png" alt="Stratova" className="h-full w-auto object-contain" />
           </a>
-          
+
           {/* Desktop Nav */}
           <div className="hidden md:flex gap-8">
             {navItems.map((item, index) => (
-              <a key={item.name} href={item.href} className={`text-sm font-bold ${!scrolled && navItems.length - 1 === index ? "text-white" : "text-stratova-dark" } hover:text-stratova-blue transition-colors`}>
+              <a key={item.name} href={item.href} className={`text-sm font-bold ${!scrolled && navItems.length - 1 === index ? "text-white" : "text-stratova-dark"} hover:text-stratova-blue transition-colors`}>
                 {item.name}
               </a>
             ))}
@@ -68,9 +70,9 @@ export default function App() {
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl py-6 flex flex-col items-center gap-6 border-t border-gray-100">
             {navItems.map((item) => (
-              <a 
-                key={item.name} 
-                href={item.href} 
+              <a
+                key={item.name}
+                href={item.href}
                 className="text-xl font-bold text-stratova-dark hover:text-stratova-blue transition-colors px-8 py-2 w-full text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -94,6 +96,7 @@ export default function App() {
         <WhyChooseUs />
         <Contact />
       </main>
+      <Footer />
     </div>
   );
 }

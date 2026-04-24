@@ -28,50 +28,83 @@ export const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="w-full bg-stratova-dark py-20 px-8 md:px-16 flex flex-col relative">
-      <div className="mb-16">
+    <section id="why-choose-us" className={`w-full bg-stratova-dark py-20 px-8 md:px-16 flex flex-col relative overflow-visible ${hoveredIndex !== null ? 'z-50' : 'z-10'}`}>
+      <motion.div 
+        initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: false, margin: "-100px" }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        className="mb-16"
+      >
         <h2 className="text-3xl md:text-4xl font-normal text-white mb-2">WHY CHOOSE</h2>
         <h2 className="text-6xl md:text-8xl font-black text-white tracking-tight leading-none">STRATOVA</h2>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 items-start">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8, staggerChildren: 0.1 }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 items-start"
+      >
         {reasons.map((reason, index) => {
           const isHovered = hoveredIndex === index;
+
           return (
             <div
               key={index}
-              className="flex flex-col cursor-pointer"
+              className="relative h-[120px] md:h-[140px] w-full" // Fixed height wrapper to prevent layout shift
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              {/* White title — always visible */}
-              <div className="bg-white p-6 flex items-center justify-center min-h-[100px] md:min-h-[120px]">
-                <h3 className="text-xl md:text-2xl font-bold text-stratova-dark text-center leading-tight">
-                  {reason.title}
-                </h3>
-              </div>
-
-              {/* Blue body — hidden until hover */}
               <motion.div
-                initial={false}
-                animate={{
-                  height: isHovered ? 'auto' : 0,
-                  opacity: isHovered ? 1 : 0,
+                initial={{ opacity: 0, scale: 0.9, filter: "blur(5px)" }}
+                whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                animate={{ 
+                  scale: isHovered ? 1.2 : 1,
+                  zIndex: isHovered ? 50 : 0,
+                  y: isHovered ? -10 : 0
                 }}
-                transition={{ type: 'spring', stiffness: 200, damping: 26 }}
-                style={{ overflow: 'hidden' }}
-                className="bg-stratova-blue"
+                viewport={{ once: false, margin: "-50px" }}
+                transition={{ 
+                  type: 'spring', 
+                  stiffness: 300, 
+                  damping: 25,
+                  opacity: { duration: 0.3 }
+                }}
+                className={`absolute top-0 left-0 w-full flex flex-col cursor-pointer transition-shadow duration-500 rounded-2xl overflow-hidden ${isHovered ? 'shadow-[0_30px_60px_rgba(0,0,0,0.6)] bg-stratova-dark' : ''}`}
               >
-                <div className="p-6 md:p-8">
-                  <p className="text-white text-base md:text-lg font-medium leading-relaxed">
-                    {reason.description}
-                  </p>
+                {/* White title — always visible */}
+                <div className={`p-6 flex items-center justify-center min-h-[100px] md:min-h-[120px] transition-colors duration-300 ${isHovered ? 'bg-stratova-blue' : 'bg-white'}`}>
+                  <h3 className={`text-sm md:text-base font-bold text-center leading-tight transition-colors duration-300 ${isHovered ? 'text-white' : 'text-stratova-dark'}`}>
+                    {reason.title}
+                  </h3>
                 </div>
+
+                {/* Blue body — hidden until hover */}
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: isHovered ? 'auto' : 0,
+                    opacity: isHovered ? 1 : 0,
+                  }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  style={{ overflow: 'hidden' }}
+                  className="bg-stratova-dark"
+                >
+                  <div className="p-6 md:p-8 border-t border-white/10">
+                    <p className="text-white/90 text-xs md:text-sm font-medium leading-relaxed">
+                      {reason.description}
+                    </p>
+                  </div>
+                </motion.div>
               </motion.div>
             </div>
           );
         })}
-      </div>
+      </motion.div>
+
+
     </section>
   );
 };
