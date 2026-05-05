@@ -33,9 +33,9 @@ export const CoreValues = () => {
   ];
 
   return (
-    <section id="values" className={`w-full min-h-screen flex flex-col relative overflow-visible ${hoveredIndex !== null ? 'z-50' : 'z-10'}`}>
+    <section id="values" className="w-full min-h-screen flex flex-col relative overflow-visible" style={{ zIndex: hoveredIndex !== null ? 50 : 1, position: 'relative' }}>
       {/* Top White Section */}
-      <div className="w-full bg-white pt-20 pb-40 px-8 md:px-16">
+      <div className="w-full bg-white pt-20 pb-60 md:pb-40 px-8 md:px-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,25 +50,25 @@ export const CoreValues = () => {
       {/* Bottom Dark Blue Section */}
       <div className="w-full flex-grow bg-stratova-dark relative py-20 px-8 md:px-16">
 
-        {/* Diamonds Row */}
-        <div className="absolute top-0 left-0 w-full flex justify-center -translate-y-1/2 px-4">
+        {/* Diamonds Row — high z-index so icons are always above hover cards */}
+        <div className="absolute top-0 left-0 w-full flex justify-center -translate-y-1/2 px-4" style={{ zIndex: 30 }}>
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.8, staggerChildren: 0.1 }}
-            className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-0 w-full max-w-7xl"
+            className="flex flex-wrap justify-center gap-6 md:gap-0 w-full max-w-7xl md:grid md:grid-cols-5"
           >
             {values.map((value, index) => (
-              <div key={index} className="flex justify-center">
+              <div key={index} className="flex justify-center w-[40%] md:w-auto">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
                   whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-48 md:h-48 flex items-center justify-center cursor-pointer"
-                  onHoverStart={() => setHoveredIndex(index)}
-                  onHoverEnd={() => setHoveredIndex(null)}
+                  className="relative w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 md:w-48 md:h-48 flex items-center justify-center cursor-pointer"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
                   whileHover={{ scale: 1.08 }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-stratova-blue to-stratova-blue-dark transform rotate-45 rounded-2xl shadow-[0_10px_30px_rgba(27,139,186,0.3)] transition-all duration-300" />
@@ -82,21 +82,21 @@ export const CoreValues = () => {
         </div>
 
         {/* Text Content Row */}
-        <div className="container mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 mt-8 md:mt-16 relative">
+        <div className="container mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-12 md:gap-4 mt-32 md:mt-16 relative">
           {values.map((value, index) => {
             const isHovered = hoveredIndex === index;
             return (
               <div 
                 key={index} 
-                className="relative h-[80px] md:h-[100px]" // Stable wrapper
+                className="relative h-[100px] xs:h-[120px] md:h-[100px]" // Stable wrapper
               >
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   animate={{
-                    scale: isHovered ? 1.15 : 1,
-                    zIndex: isHovered ? 50 : 0,
-                    y: isHovered ? -20 : 0,
+                    scale: isHovered ? 1.08 : 1,
+                    zIndex: isHovered ? 10 : 0,
+                    y: isHovered ? 8 : 0,
                   }}
                   viewport={{ once: false }}
                   transition={{ 
@@ -108,7 +108,7 @@ export const CoreValues = () => {
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 cursor-default">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 cursor-default uppercase tracking-wide">
                     {value.title}
                   </h3>
 

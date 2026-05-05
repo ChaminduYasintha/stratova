@@ -73,7 +73,7 @@ export const Hero = () => {
           <motion.div 
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-[180px] h-[180px] xs:w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[350px] lg:h-[350px] xl:w-[420px] xl:h-[420px] 2xl:w-[550px] 2xl:h-[550px] flex items-center justify-center"
+            className="relative w-[180px] h-[180px] xs:w-[220px] xs:h-[220px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[350px] lg:h-[350px] xl:w-[420px] xl:h-[420px] 2xl:w-[550px] 2xl:h-[550px] flex items-center justify-center"
           >
             {/* White Inner Diamond holding the Logo - Rounded Edges */}
             <div className="absolute inset-0 bg-white transform rotate-45 overflow-hidden flex items-center justify-center shadow-2xl rounded-2xl md:rounded-[40px]">

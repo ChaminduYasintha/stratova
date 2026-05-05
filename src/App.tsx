@@ -45,7 +45,7 @@ export default function App() {
   return (
     <div className="relative">
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-4 opacity-90' : 'bg-transparent py-6'}`}>
+      <nav style={{ willChange: 'transform', transform: 'translateZ(0)' }} className={`fixed w-full z-[200] transition-all duration-1000 ${scrolled ? 'bg-white shadow-md py-4 opacity-90' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-8 md:px-16 flex justify-between items-center">
           <a href="#" className="flex items-center h-12 md:h-16 transition-all duration-300 hover:scale-105">
             <img src="/STRATOVA LOGO.png" alt="Stratova" className="h-full w-auto object-contain" />
@@ -54,7 +54,7 @@ export default function App() {
           {/* Desktop Nav */}
           <div className="hidden md:flex gap-8">
             {navItems.map((item, index) => (
-              <a key={item.name} href={item.href} className={`text-sm font-bold ${!scrolled && navItems.length - 1 === index ? "text-white" : "text-stratova-dark"} hover:text-stratova-blue transition-colors`}>
+              <a key={item.name} href={item.href} style={!scrolled ? { textShadow: '0 1px 8px rgba(0,0,0,0.6)' } : {}} className={`text-base font-extrabold tracking-wide ${scrolled ? 'text-stratova-dark' : 'text-white'} hover:text-stratova-blue transition-colors`}>
                 {item.name}
               </a>
             ))}
