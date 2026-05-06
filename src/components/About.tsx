@@ -67,7 +67,7 @@ export const About = () => {
           </div>
 
           {/* RIGHT: Vision + Mission cards */}
-          <div className="w-full lg:w-1/2 flex flex-col gap-6">
+          <div className="w-full lg:w-1/2 grid gap-6" style={{gridTemplateRows: '1fr 1fr'}}>
 
             {/* Vision card */}
             <motion.div
@@ -75,7 +75,7 @@ export const About = () => {
               whileInView={{ opacity: 1, scale: 1, x: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="relative bg-gradient-to-br from-stratova-blue to-stratova-blue-dark rounded-3xl shadow-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 cursor-default"
+              className="relative bg-gradient-to-br from-stratova-blue to-stratova-blue-dark rounded-3xl shadow-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 cursor-default h-full"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 transform translate-x-8 -translate-y-8 rotate-45 rounded-3xl" />
               <div className="p-8 md:p-10 relative z-10">
@@ -101,7 +101,7 @@ export const About = () => {
               whileInView={{ opacity: 1, scale: 1, x: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="relative bg-gradient-to-br from-stratova-blue to-stratova-blue-dark rounded-3xl shadow-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 cursor-default mt-2"
+              className="relative bg-gradient-to-br from-stratova-blue to-stratova-blue-dark rounded-3xl shadow-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 cursor-default h-full"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 transform translate-x-8 -translate-y-8 rotate-45 rounded-3xl" />
               <div className="p-8 md:p-10 relative z-10">
