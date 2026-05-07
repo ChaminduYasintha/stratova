@@ -57,7 +57,7 @@ export const Services = () => {
   return (
     <section
       id="services-1"
-      className="w-full bg-white py-24 relative overflow-visible"
+      className="w-full bg-white py-20 md:py-28 relative overflow-visible"
       style={{ zIndex: hoveredIndex !== null ? 50 : 1, position: 'relative' }}
     >
       {/* Background Accent — clipped so it cannot bleed outside the section */}
@@ -85,7 +85,7 @@ export const Services = () => {
             const isHovered = hoveredIndex === index;
 
             return (
-              /* ── Fixed-height wrapper — layout never shifts ── */
+              /* ── Wrapper ── */
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
@@ -96,19 +96,18 @@ export const Services = () => {
                   delay: index * 0.45,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                /* Height is FIXED — inner card is absolute, so expansion is free-floating */
-                style={{ position: 'relative', height: `${CARD_HEIGHT}px`, zIndex: isHovered ? 50 : 1 }}
+                style={{ position: 'relative', zIndex: isHovered ? 50 : 1 }}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                {/* ── Absolute card — grows downward over the section ── */}
+                {/* ── Card — pushes the boxes under ── */}
                 <motion.div
                   animate={{
                     scale: isHovered ? 1.012 : 1,
                     y: isHovered ? -4 : 0,
                   }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className={`absolute top-0 left-0 w-full flex flex-col cursor-pointer rounded-2xl overflow-hidden border border-white/10
+                  className={`relative w-full flex flex-col cursor-pointer rounded-2xl overflow-hidden border border-white/10
                     ${isHovered
                       ? 'shadow-[0_24px_60px_rgba(27,139,186,0.22)] border-stratova-blue/30'
                       : 'shadow-[0_8px_32px_rgba(10,17,40,0.14)]'

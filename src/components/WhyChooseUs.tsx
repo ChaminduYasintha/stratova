@@ -28,7 +28,7 @@ export const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="w-full bg-stratova-dark py-20 px-8 md:px-16 flex flex-col relative overflow-visible" style={{ zIndex: hoveredIndex !== null ? 50 : 1, position: 'relative' }}>
+    <section id="why-choose-us" className="w-full bg-stratova-dark py-20 md:py-28 px-8 md:px-16 flex flex-col relative overflow-visible" style={{ zIndex: hoveredIndex !== null ? 50 : 1, position: 'relative' }}>
       <motion.div 
         initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}

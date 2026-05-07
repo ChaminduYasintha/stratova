@@ -33,9 +33,9 @@ export const CoreValues = () => {
   ];
 
   return (
-    <section id="values" className="w-full min-h-screen flex flex-col relative overflow-visible" style={{ zIndex: hoveredIndex !== null ? 50 : 1, position: 'relative' }}>
+    <section id="values" className="w-full flex flex-col relative overflow-visible" style={{ zIndex: hoveredIndex !== null ? 50 : 1, position: 'relative' }}>
       {/* Top White Section */}
-      <div className="w-full bg-white pt-20 pb-60 md:pb-40 px-8 md:px-16">
+      <div className="w-full bg-white pt-20 md:pt-28 pb-60 md:pb-40 px-8 md:px-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export const CoreValues = () => {
       </div>
 
       {/* Bottom Dark Blue Section */}
-      <div className="w-full flex-grow bg-stratova-dark relative py-20 px-8 md:px-16">
+      <div className="w-full flex-grow bg-stratova-dark relative py-20 md:py-28 px-8 md:px-16">
 
         {/* Diamonds Row — high z-index so icons are always above hover cards */}
         <div className="absolute top-0 left-0 w-full flex justify-center -translate-y-1/2 px-4" style={{ zIndex: 30 }}>

@@ -3,9 +3,9 @@ import { motion } from 'motion/react';
 
 export const Team = () => {
   return (
-    <section id="team" className="w-full min-h-screen flex flex-col md:flex-row relative overflow-hidden bg-white">
+    <section id="team" className="w-full flex flex-col md:flex-row relative overflow-hidden bg-white">
       {/* Left Content */}
-      <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center relative z-10 pl-8 md:pl-24">
+      <div className="w-full md:w-1/2 py-20 md:py-28 pr-8 pl-8 md:pr-16 md:pl-24 flex flex-col justify-center relative z-10">
         <motion.h2 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}

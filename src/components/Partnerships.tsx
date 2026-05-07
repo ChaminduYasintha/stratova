@@ -17,18 +17,18 @@ export const Partnerships = () => {
   };
 
   return (
-    <section id="partnerships" className="w-full min-h-screen flex flex-col relative overflow-hidden bg-white">
+    <section id="partnerships" className="w-full flex flex-col relative overflow-hidden bg-white">
       {/* Top White Section */}
-      <div className="w-full min-h-[40vh] md:min-h-[50vh] bg-white pt-24 pb-48 md:pb-64 px-8 md:px-24 flex flex-col justify-start">
+      <div className="w-full bg-white pt-20 md:pt-28 pb-48 md:pb-72 px-8 md:px-24 flex flex-col justify-start relative z-0">
         <h2 className="text-4xl md:text-5xl font-light text-stratova-dark mb-1 ml-1 md:ml-3">OUR</h2>
         <h2 className="text-5xl md:text-[6.5rem] lg:text-[7.5rem] font-black text-stratova-dark leading-none">PARTNERSHIPS</h2>
       </div>
 
       {/* Bottom Light Blue Section */}
-      <div className="w-full min-h-[30vh] md:min-h-[50vh] bg-stratova-blue relative flex-grow">
+      <div className="w-full bg-stratova-blue pb-20 md:pb-28 relative z-10 flex flex-col items-center">
         
         {/* Logos Container positioned across the horizon */}
-        <div className="absolute top-0 left-0 w-full flex justify-center -translate-y-1/2 px-8">
+        <div className="w-full flex justify-center -mt-24 md:-mt-36 px-8">
           <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 w-full">
             
             {/* Partner 1: CIMA */}

@@ -16,7 +16,7 @@ export const Contents = () => {
   ];
 
   return (
-    <section className="w-full min-h-screen bg-stratova-dark py-20 px-8 md:px-16 flex flex-col md:flex-row">
+    <section className="w-full bg-stratova-dark py-20 md:py-28 px-8 md:px-16 flex flex-col md:flex-row">
       <div className="w-full md:w-1/2 flex flex-col justify-between">
         <h2 className="text-6xl md:text-8xl font-black text-white tracking-tight mb-12 md:mb-0">
           CONTENTS

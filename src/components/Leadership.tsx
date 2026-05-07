@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Leadership = () => {
   return (
-    <section id="leadership" className="w-full min-h-screen flex flex-col md:flex-row relative overflow-hidden bg-white">
+    <section id="leadership" className="w-full flex flex-col md:flex-row relative overflow-hidden bg-white">
       {/* Left: Graphics & Photo */}
       <div className="w-full md:w-2/5 relative min-h-[500px] flex items-end justify-center">
         
@@ -30,7 +30,7 @@ export const Leadership = () => {
       </div>
 
       {/* Right: Content */}
-      <div className="w-full md:w-3/5 p-8 md:p-16 flex flex-col justify-start relative z-10 pt-16">
+      <div className="w-full md:w-3/5 px-8 md:px-16 py-20 md:py-28 flex flex-col justify-start relative z-10">
         
         {/* Header Block Top Right */}
         <div className="flex flex-col items-end mb-16 w-full">

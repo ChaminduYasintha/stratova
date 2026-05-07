@@ -19,7 +19,7 @@ export const Clients = () => {
       {/* Left Content - Dark border framing the blue block */}
       <div className="w-full md:w-1/2 bg-stratova-dark p-6 md:p-10 flex flex-col justify-center relative z-10">
         <div className="w-full h-full bg-stratova-blue p-8 md:p-12 lg:p-20 flex flex-col justify-center">
-          <div className="max-w-xl mx-auto space-y-8 text-base md:text-lg text-stratova-dark font-medium leading-relaxed">
+          <div className="max-w-xl mx-auto text-base md:text-lg text-stratova-dark font-medium leading-relaxed">
             <p>
               Our clients are at the heart of everything we do. We
               believe that honesty, transparency, and trust are
@@ -42,13 +42,13 @@ export const Clients = () => {
 
       {/* Right Content */}
       <div className="w-full md:w-1/2 bg-white pb-8 px-8 md:px-16 pt-16 flex flex-col relative z-10">
-        
+
         {/* Header Block Top Right */}
         <div className="flex flex-col items-end mb-12 w-full">
           <h2 className="text-3xl md:text-5xl font-normal text-stratova-dark mb-[-0.25rem] pr-2">OUR</h2>
           <h2 className="text-6xl md:text-[7rem] font-black text-stratova-dark tracking-tighter leading-none">CLIENTS</h2>
         </div>
-        
+
         {/* Custom SVG Line Art to approximate the illustration */}
         <motion.div
           ref={ref}
@@ -63,17 +63,17 @@ export const Clients = () => {
             <path d="M 40 100 L 40 70 C 40 60 50 55 60 55 C 65 55 70 60 70 70 L 70 100" />
             <circle cx="55" cy="45" r="8" />
             <path d="M 40 80 L 60 85 L 70 80" />
-            
+
             {/* Person 2 (Sitting Middle) ovelapping laptop */}
             <path d="M 90 120 L 90 90 C 90 85 95 80 100 80 C 105 80 110 85 110 90 L 110 120" />
             <circle cx="100" cy="70" r="7" />
             <path d="M 75 115 L 85 100 L 115 100 L 125 115 Z" />
-            
+
             {/* Person 3 (Standing Right) */}
             <path d="M 130 110 L 130 80 C 130 70 140 65 150 65 C 160 65 170 75 170 85 L 170 120" />
             <circle cx="145" cy="55" r="8" />
             <path d="M 170 85 L 150 90 L 130 85" />
-            
+
             {/* Person 4 (Bottom Left) */}
             <path d="M 15 150 L 15 130 C 15 120 25 115 35 115 C 45 115 50 125 50 135 L 50 150" />
             <circle cx="30" cy="105" r="9" />

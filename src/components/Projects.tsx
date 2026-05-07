@@ -2,9 +2,9 @@ import React from 'react';
 
 export const Projects = () => {
   return (
-    <section id="projects" className="w-full min-h-screen flex flex-col md:flex-row relative overflow-hidden bg-white">
+    <section id="projects" className="w-full flex flex-col md:flex-row relative overflow-hidden bg-white">
       {/* Left Content */}
-      <div className="w-full md:w-3/5 py-12 px-8 lg:px-16 flex flex-col justify-center gap-6 relative z-10 bg-white">
+      <div className="w-full md:w-3/5 py-20 md:py-28 px-8 lg:px-16 flex flex-col justify-center gap-6 relative z-10 bg-white">
         
         {/* Box 1 */}
         <div className="bg-stratova-blue py-6 px-6 md:px-10">
@@ -60,7 +60,7 @@ export const Projects = () => {
       </div>
 
       {/* Right Content */}
-      <div className="w-full md:w-2/5 bg-stratova-dark px-8 md:px-12 py-16 flex flex-col relative z-20">
+      <div className="w-full md:w-2/5 bg-stratova-dark px-8 md:px-12 py-20 md:py-28 flex flex-col relative z-20">
         
         {/* Header Block */}
         <div className="text-right mb-16 mt-8">

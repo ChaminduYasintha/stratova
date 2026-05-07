@@ -4,7 +4,7 @@ import { Logo } from './Logo';
 
 export const Contact = () => {
   return (
-    <section id="contact" className="w-full min-h-screen flex flex-col md:flex-row relative overflow-hidden bg-white">
+    <section id="contact" className="w-full flex flex-col md:flex-row relative overflow-hidden bg-white">
       {/* Background Graphics */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Top Right Light Blue Triangle */}
@@ -14,7 +14,7 @@ export const Contact = () => {
       </div>
 
       {/* Left Content */}
-      <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center relative z-10">
+      <div className="w-full md:w-1/2 px-8 py-20 md:py-28 md:px-16 flex flex-col justify-center relative z-10">
         <h2 className="text-6xl md:text-8xl font-black text-stratova-dark tracking-tight mb-12">CONTACT US</h2>
         
         <p className="text-xl text-stratova-dark font-medium leading-relaxed mb-8">
