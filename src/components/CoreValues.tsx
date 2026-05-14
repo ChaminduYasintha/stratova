@@ -7,27 +7,27 @@ export const CoreValues = () => {
   const values = [
     {
       title: 'INTEGRITY',
-      icon: <img src="/integrety.png" alt="Integrity" className="w-12 h-12 object-contain opacity-80" />,
+      icon: <img src="/intergrity.png" alt="Integrity" className="w-20 h-20 md:w-32 md:h-32 object-contain opacity-90" />,
       description: 'We uphold the highest standards of honesty, transparency, and ethical conduct in every engagement and decision.'
     },
     {
       title: 'INNOVATION',
-      icon: <img src="/inovation.png" alt="Innovation" className="w-12 h-12 object-contain opacity-80" />,
+      icon: <img src="/inovation.png" alt="Innovation" className="w-20 h-20 md:w-32 md:h-32 object-contain opacity-90" />,
       description: 'We embrace innovative thinking and forward-looking solutions to create strategic value and drive sustainable growth for our clients.'
     },
     {
       title: 'EXCELLENCE',
-      icon: <img src="/excelence.png" alt="Excellence" className="w-12 h-12 object-contain opacity-80" />,
+      icon: <img src="/excelence.png" alt="Excellence" className="w-20 h-20 md:w-32 md:h-32 object-contain opacity-90" />,
       description: 'We are committed to delivering exceptional quality and professional standards in every service we provide.'
     },
     {
       title: 'PARTNERSHIP',
-      icon: <img src="/partnership.png" alt="Partnership" className="w-12 h-12 object-contain opacity-80" />,
+      icon: <img src="/partnership.png" alt="Partnership" className="w-20 h-20 md:w-32 md:h-32 object-contain opacity-90" />,
       description: 'We believe in building trusted, long-term partnerships with clients and stakeholders, working collaboratively to create sustainable value and shared success.'
     },
     {
       title: 'SUSTAINABILITY',
-      icon: <img src="/sustainability.png" alt="Sustainability" className="w-12 h-12 object-contain opacity-80" />,
+      icon: <img src="/sustainability.png" alt="Sustainability" className="w-20 h-20 md:w-32 md:h-32 object-contain opacity-90" />,
       description: 'We are committed to promoting sustainable business practices that create long-term economic, social, and environmental value.'
     }
   ];

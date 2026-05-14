@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 const services = [
   {
     title: "Financial Strategic Solutions",
-    icon: <img src="/finacialstrategic.png" alt="Financial Strategic Solutions" className="w-20 h-20 object-contain opacity-90" />,
+    icon: <img src="/finacialstrategic.png" alt="Financial Strategic Solutions" className="w-40 h-40 object-contain opacity-90" />,
     items: [
       "Private Equity Placements (Local & International)",
       "Investor Identification & Strategic Partner Matching",
@@ -20,7 +20,7 @@ const services = [
   },
   {
     title: "Project Management Consultancy Services",
-    icon: <img src="/projectmangemnt.png" alt="Project Management Services" className="w-20 h-20 object-contain opacity-90" />,
+    icon: <img src="/projectmanagement.png" alt="Project Management Services" className="w-40 h-40 object-contain opacity-90" />,
     items: [
       "Donor Identification & Grant Mobilisation (NGOs & INGOs)",
       "Development Project Proposal Writing",
@@ -35,7 +35,7 @@ const services = [
   },
   {
     title: "Entrepreneurship Advisory Services",
-    icon: <img src="/entrepreneurship.png" alt="Entrepreneurship Advisory" className="w-20 h-20 object-contain opacity-90" />,
+    icon: <img src="/enterprenuership.png" alt="Entrepreneurship Advisory" className="w-40 h-40 object-contain opacity-90" />,
     items: [
       "Business Structuring & Growth Strategy",
       "Raising Private Equity & Expansion Capital",

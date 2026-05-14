@@ -49,13 +49,13 @@ export const Team = () => {
 
 
       {/* Right: Diagonal framed illustrations */}
-      <div className="w-full md:w-1/2 relative min-h-[400px] md:min-h-[500px] flex items-center justify-center overflow-hidden pr-0 md:pr-16">
+      <div className="w-full md:w-1/2 relative min-h-[600px] md:min-h-[800px] flex items-center justify-center pr-0 md:pr-16">
         <motion.div 
           initial={{ opacity: 0, x: 100, rotate: 25 }}
           whileInView={{ opacity: 1, x: 0, rotate: 25 }}
           viewport={{ once: false }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="absolute flex flex-col items-center justify-center transform scale-75 sm:scale-90 md:scale-110"
+          className="absolute flex flex-col items-center justify-center transform scale-75 sm:scale-90 md:scale-100 mt-12 md:mt-0"
         >
 
           {/* Frame 1 */}
@@ -64,13 +64,7 @@ export const Team = () => {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="w-56 h-56 border-[16px] border-stratova-dark shadow-2xl z-0 transform translate-x-12 translate-y-6 bg-white overflow-hidden flex items-center justify-center"
           >
-            <svg viewBox="0 0 120 120" className="w-full h-full p-2 transform -rotate-[25deg]" fill="none" stroke="#1b8bba" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="45" cy="40" r="12" />
-              <circle cx="75" cy="45" r="10" />
-              <path d="M 25 100 C 25 70 65 70 65 100" />
-              <path d="M 60 100 C 60 75 95 75 95 100" />
-              <rect x="50" y="60" width="30" height="20" rx="2" />
-            </svg>
+            <img src="/ourteam1.png" alt="Our Team 1" className="w-full h-full object-cover transform -rotate-[25deg] scale-[1.4]" />
           </motion.div>
 
           {/* Frame 2 */}
@@ -79,14 +73,7 @@ export const Team = () => {
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             className="w-72 h-72 border-[16px] border-stratova-blue shadow-2xl z-10 bg-white overflow-hidden flex items-center justify-center relative"
           >
-            <svg viewBox="0 0 140 140" className="w-full h-full p-6 transform -rotate-[25deg]" fill="none" stroke="#1b8bba" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="35" cy="45" r="12" />
-              <circle cx="70" cy="40" r="14" />
-              <circle cx="105" cy="45" r="12" />
-              <path d="M 15 120 C 15 90 55 90 55 120" />
-              <path d="M 50 120 C 50 85 90 85 90 120" />
-              <path d="M 85 120 C 85 90 125 90 125 120" />
-            </svg>
+            <img src="/ourteam2.png" alt="Our Team 2" className="w-full h-full object-cover transform -rotate-[25deg] scale-[1.4]" />
           </motion.div>
 
           {/* Frame 3 */}
@@ -95,13 +82,7 @@ export const Team = () => {
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
             className="w-60 h-60 border-[16px] border-stratova-dark shadow-2xl z-20 transform -translate-x-12 -translate-y-6 bg-white overflow-hidden flex items-center justify-center relative"
           >
-            <svg viewBox="0 0 120 120" className="w-full h-full p-2 transform -rotate-[25deg]" fill="none" stroke="#1b8bba" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="40" cy="35" r="12" />
-              <circle cx="80" cy="45" r="12" />
-              <path d="M 15 100 C 15 70 65 70 65 100" />
-              <path d="M 60 100 C 60 75 100 75 100 100" />
-              <rect x="35" y="65" width="40" height="25" rx="2" strokeWidth="2" />
-            </svg>
+            <img src="/ourteam3.png" alt="Our Team 3" className="w-full h-full object-cover transform -rotate-[25deg] scale-[1.4]" />
           </motion.div>
 
         </motion.div>
