@@ -1,33 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 
 const services = [
   {
     title: "Financial Strategic Solutions",
-    icon: <img src="/finacialstrategic.png" alt="Financial Strategic Solutions" className="w-40 h-40 object-contain opacity-90" />,
+    icon: <img src="/finacialstrategic.png" alt="Financial Strategic Solutions" className="w-24 h-24 md:w-32 md:h-32 object-contain" style={{ filter: 'brightness(0) invert(1)' }} />,
     items: [
-      "Private Equity Placements (Local & International)",
-      "Investor Identification & Strategic Partner Matching",
-      "Debt Raising : Private & Financial Institutions",
-      "Debt & Capital Restructuring (SME-Focused)",
+      "Private Equity & Debt Raising",
+      "Debt Restructuring (SME-Focused)",
       "Company Turnaround & Distressed Business Advisory",
-      "Mergers & Acquisitions (M&A) Advisory",
       "FDI Structuring & BOI Facilitation",
-      "Portfolio Strategy & Financial Modelling",
       "Pitch Deck & Investment Memorandum Preparation",
-      "Coordinations with CBSL, CSE, SEC etc for Licensing Requirements"
+      "Cordinations with Regulators for Licenses",
+      "Manuals/SOP Develpment"
     ]
   },
   {
     title: "Project Management Consultancy Services",
-    icon: <img src="/projectmanagement.png" alt="Project Management Services" className="w-40 h-40 object-contain opacity-90" />,
+    icon: <img src="/projectmanagement.png" alt="Project Management Services" className="w-24 h-24 md:w-32 md:h-32 object-contain" style={{ filter: 'brightness(0) invert(1)' }} />,
     items: [
-      "Donor Identification & Grant Mobilisation (NGOs & INGOs)",
-      "Development Project Proposal Writing",
-      "Fund & Grant Management",
-      "Budgeting, Financial Planning & Bookkeeping Support",
+      "Development Project Proposal",
       "Monitoring & Evaluation (M&E) Frameworks",
-      "Rapid Rural Assessments (RRA) / Need Assessments",
+      "Rapid Rural Assessments (RRA) / Need Assesments",
       "Project/Programme Manuals & SOP Development",
       "Capacity Building & Institutional Strengthening Trainings",
       "Research, Surveys & Feasibility Studies"
@@ -35,7 +29,7 @@ const services = [
   },
   {
     title: "Entrepreneurship Advisory Services",
-    icon: <img src="/enterprenuership.png" alt="Entrepreneurship Advisory" className="w-40 h-40 object-contain opacity-90" />,
+    icon: <img src="/enterprenuership.png" alt="Entrepreneurship Advisory" className="w-24 h-24 md:w-32 md:h-32 object-contain" style={{ filter: 'brightness(0) invert(1)' }} />,
     items: [
       "Business Structuring & Growth Strategy",
       "Raising Private Equity & Expansion Capital",
@@ -48,160 +42,80 @@ const services = [
   }
 ];
 
-// Fixed height of the collapsed card — wrapper stays this height always
-const CARD_HEIGHT = 160;
-
 export const Services = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   return (
-    <section
-      id="services-1"
-      className="w-full bg-white py-20 md:py-28 relative overflow-visible"
-      style={{ zIndex: hoveredIndex !== null ? 50 : 1, position: 'relative' }}
-    >
-      {/* Background Accent — clipped so it cannot bleed outside the section */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-stratova-dark transform rotate-45 translate-x-1/3 -translate-y-1/2 opacity-5" />
+    <section id="services" className="w-full relative overflow-hidden bg-stratova-dark py-20">
+      
+      {/* Top Right Green Squares Pattern */}
+      <div className="absolute top-12 md:top-16 right-0 flex gap-2 opacity-80">
+        <div className="w-3 h-3 md:w-4 md:h-4 bg-stratova-green"></div>
+        <div className="w-3 h-3 md:w-4 md:h-4 bg-stratova-green translate-x-2"></div>
       </div>
 
-      <div className="container mx-auto px-8 md:px-16 relative z-10 flex flex-col">
-
+      <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col">
+        
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 80, filter: "blur(12px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-          className="text-right mb-16"
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-normal text-stratova-dark mb-2">OUR</h2>
-          <h2 className="text-6xl md:text-8xl font-black text-stratova-dark tracking-tight leading-none">SERVICES</h2>
+          <h2 className="text-4xl md:text-5xl font-normal text-[#1b80a4] mb-1 tracking-tight">OUR</h2>
+          <h2 className="text-5xl md:text-7xl font-black text-white leading-[0.9] tracking-tight">
+            SERVICES
+          </h2>
         </motion.div>
 
-        {/* Cards — fixed-height wrappers so expanded cards float OVER the section */}
-        <div className="flex flex-col gap-5">
-          {services.map((service, index) => {
-            const isHovered = hoveredIndex === index;
+        {/* Services List */}
+        <div className="flex flex-col gap-10 md:gap-12 w-full max-w-4xl mx-auto">
+          {services.map((service, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="flex flex-col md:flex-row items-center gap-6 md:gap-12 w-full"
+            >
+              {/* Icon (Left) */}
+              <div className="w-24 h-24 md:w-36 md:h-36 flex items-center justify-center shrink-0">
+                {service.icon}
+              </div>
 
-            return (
-              /* ── Wrapper ── */
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
-                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 1.1,
-                  delay: index * 0.45,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                style={{ position: 'relative', zIndex: isHovered ? 50 : 1 }}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                {/* ── Card — pushes the boxes under ── */}
-                <motion.div
-                  animate={{
-                    scale: isHovered ? 1.012 : 1,
-                    y: isHovered ? -4 : 0,
-                  }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className={`relative w-full flex flex-col cursor-pointer rounded-2xl overflow-hidden border border-white/10
-                    ${isHovered
-                      ? 'shadow-[0_24px_60px_rgba(27,139,186,0.22)] border-stratova-blue/30'
-                      : 'shadow-[0_8px_32px_rgba(10,17,40,0.14)]'
-                    }`}
-                  style={{ backgroundColor: 'rgba(10,17,40,1)' }}
-                >
-                  {/* Gradient Overlay on hover */}
-                  <motion.div
-                    animate={{ opacity: isHovered ? 1 : 0 }}
-                    transition={{ duration: 0.45 }}
-                    className="absolute inset-0 bg-gradient-to-r from-stratova-blue/10 via-transparent to-transparent pointer-events-none rounded-2xl"
-                  />
-
-                  {/* Icon + Title Row — fixed height, always visible */}
-                  <div
-                    className="flex flex-row items-stretch w-full shrink-0 relative z-10"
-                    style={{ height: `${CARD_HEIGHT}px` }}
-                  >
-                    {/* Icon block */}
-                    <motion.div
-                      animate={{ width: isHovered ? '18%' : '28%' }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                      className="flex justify-center items-center bg-white/5 h-full shrink-0"
-                    >
-                      <motion.div
-                        animate={{ scale: isHovered ? 0.8 : 1 }}
-                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                      >
-                        {service.icon}
-                      </motion.div>
-                    </motion.div>
-
-                    {/* Title block */}
-                    <motion.div
-                      animate={{
-                        backgroundColor: isHovered
-                          ? 'rgba(27,139,186,0)'
-                          : 'rgba(27,139,186,1)',
-                      }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                      className="flex flex-1 items-center px-6 md:px-10 h-full relative"
-                    >
-                      <h3 className="text-lg md:text-2xl font-bold text-white leading-snug">
-                        {service.title}
-                      </h3>
-
-
-                    </motion.div>
-                  </div>
-
-                  {/* Expandable Items Panel — floats over section below */}
-                  <motion.div
-                    initial={false}
-                    animate={{
-                      height: isHovered ? 'auto' : 0,
-                      opacity: isHovered ? 1 : 0,
-                    }}
-                    transition={{
-                      height: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-                      opacity: { duration: 0.3, delay: isHovered ? 0.1 : 0 },
-                    }}
-                    className="overflow-hidden relative z-10"
-                  >
-                    <div className="px-6 md:px-10 pb-7 pt-2">
-                      <div className="w-full h-px bg-white/10 mb-5" />
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3">
-                        {service.items.map((item, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, x: -8 }}
-                            animate={{ opacity: isHovered ? 1 : 0, x: isHovered ? 0 : -8 }}
-                            transition={{
-                              delay: isHovered ? i * 0.04 + 0.12 : 0,
-                              duration: 0.35,
-                            }}
-                            className="flex items-start gap-3 text-sm text-white/80 hover:text-white transition-colors"
-                          >
-                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-stratova-blue flex-shrink-0 shadow-[0_0_8px_#1b8bba]" />
-                            {item}
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-
-                </motion.div>
-              </motion.div>
-            );
-          })}
+              {/* White Card (Right) */}
+              <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:px-10 flex-grow w-full">
+                <h3 className="text-lg md:text-xl font-black text-[#1b80a4] mb-4">
+                  {service.title}
+                </h3>
+                
+                <ul className="list-disc pl-5 flex flex-col gap-1.5 md:gap-2 marker:text-stratova-dark">
+                  {service.items.map((item, i) => (
+                    <li key={i} className="text-stratova-dark text-[13.5px] md:text-[15px] font-medium leading-snug md:leading-snug">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
       </div>
+
+      {/* Bottom Footer Elements */}
+      <div className="w-full mt-24 px-12 md:px-24 flex justify-between items-end relative max-w-7xl mx-auto">
+        {/* Bottom Center Green Dots */}
+        <div className="absolute left-1/2 -translate-x-1/2 flex gap-4">
+          <div className="w-4 h-4 bg-stratova-green"></div>
+          <div className="w-4 h-4 bg-stratova-green opacity-50"></div>
+          <div className="w-4 h-4 bg-stratova-green opacity-50"></div>
+          <div className="w-4 h-4 bg-stratova-green opacity-50"></div>
+        </div>
+        
+
+      </div>
+
     </section>
   );
 };
-
-export default Services;

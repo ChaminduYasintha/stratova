@@ -1,87 +1,101 @@
 import React from 'react';
 import { Phone, Mail, Globe, MapPin } from 'lucide-react';
-import { Logo } from './Logo';
+import { motion } from 'motion/react';
 
 export const Contact = () => {
   return (
-    <section id="contact" className="w-full flex flex-col md:flex-row relative overflow-hidden bg-white">
-      {/* Background Graphics */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Top Right Light Blue Triangle */}
-        <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-stratova-blue transform origin-top-right -rotate-45 translate-x-1/4 -translate-y-1/4"></div>
-        {/* Bottom Right Dark Blue Triangle */}
-        <div className="absolute bottom-0 right-0 w-2/3 h-full bg-stratova-dark transform origin-bottom-right rotate-45 translate-x-1/4 translate-y-1/4"></div>
-      </div>
-
-      {/* Left Content */}
-      <div className="w-full md:w-1/2 px-8 py-20 md:py-28 md:px-16 flex flex-col justify-center relative z-10">
-        <h2 className="text-6xl md:text-8xl font-black text-stratova-dark tracking-tight mb-12">CONTACT US</h2>
-        
-        <p className="text-xl text-stratova-dark font-medium leading-relaxed mb-8">
-          We welcome the opportunity to discuss how Stratova can support your
-          business, investment, or development initiatives.
-        </p>
-        <p className="text-xl text-stratova-dark font-medium leading-relaxed mb-16">
-          Get in touch with our team to explore tailored solutions and strategic
-          partnerships.
-        </p>
-
-        <div className="space-y-6 md:space-y-8">
-          <div className="flex items-center gap-4 md:gap-6">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-stratova-blue flex items-center justify-center text-white flex-shrink-0">
-              <Phone size={20} className="md:w-6 md:h-6" fill="currentColor" />
-            </div>
-            <span className="text-lg md:text-2xl font-bold text-stratova-dark">+94 774 488 505</span>
-          </div>
-          
-          <div className="flex items-center gap-4 md:gap-6">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-stratova-blue flex items-center justify-center text-white flex-shrink-0">
-              <Mail size={20} className="md:w-6 md:h-6" />
-            </div>
-            <span className="text-lg md:text-2xl font-bold text-stratova-dark">office@stratova.lk</span>
-          </div>
-          
-          <div className="flex items-center gap-4 md:gap-6">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-stratova-blue flex items-center justify-center text-white flex-shrink-0">
-              <Globe size={20} className="md:w-6 md:h-6" />
-            </div>
-            <span className="text-lg md:text-2xl font-bold text-stratova-dark">www.stratova.lk</span>
-          </div>
-          
-          <div className="flex items-center gap-4 md:gap-6">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-stratova-blue flex items-center justify-center text-white flex-shrink-0">
-              <MapPin size={20} className="md:w-6 md:h-6" />
-            </div>
-            <span className="text-lg md:text-2xl font-bold text-stratova-dark">78, Havelock Road, Colombo 00500, Sri Lanka</span>
-          </div>
+    <section id="contact" className="w-full flex flex-col relative overflow-hidden bg-white min-h-[100svh]">
+      
+      {/* Top Header Section (Dark Blue) */}
+      <div className="w-full bg-stratova-dark pt-20 md:pt-32 pb-16 px-12 md:px-24 relative">
+        {/* Top Right Green Dots Pattern */}
+        <div className="absolute top-12 right-12 md:right-24 grid grid-cols-4 gap-2 opacity-80 z-0">
+          {[...Array(16)].map((_, i) => (
+            <div key={i} className="w-3 h-3 bg-stratova-green"></div>
+          ))}
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative z-10"
+        >
+          <h2 className="text-4xl md:text-5xl font-light text-stratova-blue mb-1 tracking-tight">GET</h2>
+          <h2 className="text-5xl md:text-7xl font-black text-white tracking-tight leading-none mb-8">IN TOUCH</h2>
+          
+          {/* Three green dots */}
+          <div className="flex gap-2">
+            <div className="w-4 h-4 bg-stratova-green"></div>
+            <div className="w-4 h-4 bg-stratova-green"></div>
+            <div className="w-4 h-4 bg-stratova-green"></div>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Right Content */}
-      <div className="w-full md:w-1/2 flex justify-center items-center relative z-10 mt-16 md:mt-0 p-8 md:p-12">
-        <div className="w-full max-w-lg bg-gradient-to-br from-stratova-dark to-[#0f1730] p-8 md:p-12 rounded-3xl shadow-[0_30px_60px_rgba(10,17,40,0.6)] border border-stratova-blue/20 backdrop-blur-md">
-          <h3 className="text-3xl font-bold text-white mb-2">Send an Inquiry</h3>
-          <p className="text-white/70 mb-8 font-medium">Fill out the form below and we will get back to you shortly.</p>
+      {/* Main Content (White) */}
+      <div className="w-full bg-white pt-16 pb-24 px-12 md:px-24 flex-grow relative flex flex-col">
+        
+        <div className="max-w-4xl space-y-8 mb-16">
+          <p className="text-lg md:text-xl text-stratova-dark font-medium leading-relaxed">
+            Partner with Stratova to unlock strategic opportunities and sustainable growth.
+          </p>
+          <p className="text-lg md:text-xl text-stratova-dark font-medium leading-relaxed">
+            Connect with our team to explore bespoke advisory solutions, investment
+            opportunities, and strategic partnerships designed to deliver measurable
+            results for your company.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-10 items-center w-full">
+          <h3 className="text-3xl md:text-4xl font-black text-stratova-dark italic mb-2 text-center">CONTACT US</h3>
           
-          <form className="space-y-5 flex flex-col" onSubmit={(e) => e.preventDefault()}>
-            <div className="relative">
-              <input type="text" id="name" className="w-full bg-white/5 border border-white/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:border-stratova-blue focus:bg-white/10 placeholder-white/40 font-medium transition-all duration-300" placeholder="Full Name" required />
+          <div className="flex flex-col gap-6 md:gap-8 w-full">
+            <div className="flex items-center justify-center gap-4 md:gap-6">
+              <div className="w-12 h-12 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-md">
+                <Phone size={24} fill="currentColor" />
+              </div>
+              <span className="text-xl md:text-2xl font-medium text-stratova-dark">+94 077 611 0005</span>
             </div>
             
-            <div className="relative">
-               <input type="email" id="email" className="w-full bg-white/5 border border-white/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:border-stratova-blue focus:bg-white/10 placeholder-white/40 font-medium transition-all duration-300" placeholder="Email Address" required />
+            <div className="flex items-center justify-center gap-4 md:gap-6">
+              <div className="w-12 h-12 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-md">
+                <Globe size={24} />
+              </div>
+              <span className="text-xl md:text-2xl font-medium text-stratova-dark">www.stratova.lk</span>
             </div>
-
-            <div className="relative">
-               <textarea id="message" rows={4} className="w-full bg-white/5 border border-white/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:border-stratova-blue focus:bg-white/10 placeholder-white/40 font-medium resize-none transition-all duration-300" placeholder="Your Message" required></textarea>
+            
+            <div className="flex items-center justify-center gap-4 md:gap-6">
+              <div className="w-12 h-12 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-md">
+                <Mail size={24} />
+              </div>
+              <span className="text-xl md:text-2xl font-medium text-stratova-dark">office@stratova.lk</span>
             </div>
-
-            <button type="submit" className="w-full bg-stratova-blue text-white font-bold tracking-wide text-lg rounded-xl px-4 py-4 mt-4 hover:bg-[#156e9c] transition-all duration-300 transform hover:-translate-y-1 shadow-[0_10px_20px_rgba(27,139,186,0.3)] hover:shadow-[0_15px_30px_rgba(27,139,186,0.4)] ring-2 ring-transparent focus:ring-white">
-              SEND MESSAGE
-            </button>
-          </form>
+            
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-center md:text-left">
+              <div className="w-12 h-12 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-md">
+                <MapPin size={24} />
+              </div>
+              <span className="text-xl md:text-2xl font-medium text-stratova-dark">78, Havelock Road, Colombo 00500, Sri Lanka</span>
+            </div>
+          </div>
         </div>
+
       </div>
+
+      {/* Bottom Footer Elements */}
+      <div className="w-full pb-12 px-12 md:px-24 flex justify-between items-end relative max-w-7xl mx-auto z-10">
+        {/* Bottom Left Green Dots Pattern */}
+        <div className="flex gap-4 opacity-80">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="w-4 h-4 bg-stratova-green"></div>
+          ))}
+        </div>
+        
+
+      </div>
+
     </section>
   );
 };
+

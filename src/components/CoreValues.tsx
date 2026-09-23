@@ -1,139 +1,117 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 
 export const CoreValues = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   const values = [
     {
       title: 'INTEGRITY',
-      icon: <img src="/intergrity.png" alt="Integrity" className="w-20 h-20 md:w-32 md:h-32 object-contain opacity-90" />,
-      description: 'We uphold the highest standards of honesty, transparency, and ethical conduct in every engagement and decision.'
+      icon: <img src="/intergrity.png" alt="Integrity" className="w-12 h-12 md:w-16 md:h-16 object-contain brightness-0 invert" />,
+      description: 'We uphold the highest standards of honesty, transparency, and ethical conduct in every engagement.'
     },
     {
       title: 'INNOVATION',
-      icon: <img src="/inovation.png" alt="Innovation" className="w-20 h-20 md:w-32 md:h-32 object-contain opacity-90" />,
-      description: 'We embrace innovative thinking and forward-looking solutions to create strategic value and drive sustainable growth for our clients.'
+      icon: <img src="/inovation.png" alt="Innovation" className="w-12 h-12 md:w-16 md:h-16 object-contain brightness-0 invert" />,
+      description: 'We embrace innovation to create strategic value and sustainable growth.'
     },
     {
       title: 'EXCELLENCE',
-      icon: <img src="/excelence.png" alt="Excellence" className="w-20 h-20 md:w-32 md:h-32 object-contain opacity-90" />,
+      icon: <img src="/excelence.png" alt="Excellence" className="w-12 h-12 md:w-16 md:h-16 object-contain brightness-0 invert" />,
       description: 'We are committed to delivering exceptional quality and professional standards in every service we provide.'
     },
     {
       title: 'PARTNERSHIP',
-      icon: <img src="/partnership.png" alt="Partnership" className="w-20 h-20 md:w-32 md:h-32 object-contain opacity-90" />,
-      description: 'We believe in building trusted, long-term partnerships with clients and stakeholders, working collaboratively to create sustainable value and shared success.'
+      icon: <img src="/partnership.png" alt="Partnership" className="w-12 h-12 md:w-16 md:h-16 object-contain brightness-0 invert" />,
+      description: 'We believe in building trusted, long-term partnerships to create sustainable value and shared success.'
     },
     {
       title: 'SUSTAINABILITY',
-      icon: <img src="/sustainability.png" alt="Sustainability" className="w-20 h-20 md:w-32 md:h-32 object-contain opacity-90" />,
-      description: 'We are committed to promoting sustainable business practices that create long-term economic, social, and environmental value.'
+      icon: <img src="/sustainability.png" alt="Sustainability" className="w-12 h-12 md:w-16 md:h-16 object-contain brightness-0 invert" />,
+      description: 'We are committed to promoting sustainable practices to create economic, social, and environmental value.'
     }
   ];
 
   return (
-    <section id="values" className="w-full flex flex-col relative overflow-visible" style={{ zIndex: hoveredIndex !== null ? 50 : 1, position: 'relative' }}>
-      {/* Top White Section */}
-      <div className="w-full bg-white pt-20 md:pt-28 pb-60 md:pb-40 px-8 md:px-16">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.8 }}
+    <section id="values" className="w-full relative overflow-hidden bg-white py-20 flex flex-col items-center">
+      
+      {/* Top Right Green Dots Pattern */}
+      <div className="absolute top-12 right-12 md:right-24 grid grid-cols-4 gap-2 opacity-80">
+        {[...Array(8)].map((_, i) => (
+          <div key={i} className="w-3 h-3 bg-stratova-green"></div>
+        ))}
+      </div>
+
+      <div className="container mx-auto px-6 md:px-12 flex flex-col items-start w-full max-w-5xl relative z-10">
+        
+        {/* Header */}
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-normal text-stratova-dark mb-2">OUR</h2>
-          <h2 className="text-6xl md:text-8xl font-black text-stratova-dark tracking-tight">CORE VALUES</h2>
+          <h2 className="text-4xl md:text-5xl font-light text-stratova-green mb-1 tracking-tight">OUR</h2>
+          <h2 className="text-5xl md:text-7xl font-black text-stratova-dark leading-[0.9] tracking-tight uppercase">
+            CORE VALUES
+          </h2>
         </motion.div>
-      </div>
 
-      {/* Bottom Dark Blue Section */}
-      <div className="w-full flex-grow bg-stratova-dark relative py-20 md:py-28 px-8 md:px-16">
-
-        {/* Diamonds Row — high z-index so icons are always above hover cards */}
-        <div className="absolute top-0 left-0 w-full flex justify-center -translate-y-1/2 px-4" style={{ zIndex: 30 }}>
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.8, staggerChildren: 0.1 }}
-            className="flex flex-wrap justify-center gap-6 md:gap-0 w-full max-w-7xl md:grid md:grid-cols-5"
-          >
-            {values.map((value, index) => (
-              <div key={index} className="flex justify-center w-[40%] md:w-auto">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
-                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="relative w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 md:w-48 md:h-48 flex items-center justify-center cursor-pointer"
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                  whileHover={{ scale: 1.08 }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-stratova-blue to-stratova-blue-dark transform rotate-45 rounded-2xl shadow-[0_10px_30px_rgba(27,139,186,0.3)] transition-all duration-300" />
-                  <div className="relative z-10 transform scale-75 md:scale-100">
-                    {value.icon}
-                  </div>
-                </motion.div>
+        {/* Values List */}
+        <div className="flex flex-col gap-5 md:gap-7 w-full max-w-[65rem] md:pl-2">
+          {values.map((value, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="flex items-center w-full relative"
+            >
+              {/* Main Pill */}
+              <div className="flex flex-1 rounded-[40px] md:rounded-[50px] overflow-hidden bg-[#dcebf2] shadow-sm relative z-10 h-full">
+                {/* Left Dark Blue Icon Container */}
+                <div className="bg-stratova-dark w-24 md:w-32 flex items-center justify-center shrink-0 py-6 md:py-8">
+                  {value.icon}
+                </div>
+                
+                {/* Right Light Blue Text Container */}
+                <div className="flex flex-col justify-center py-5 px-6 md:py-6 md:px-8 z-10 flex-grow">
+                  <h3 className="text-lg md:text-xl font-black text-stratova-dark mb-1 md:mb-1.5">{value.title}</h3>
+                  <p className="text-[13px] md:text-[15px] text-stratova-dark font-medium leading-snug md:leading-relaxed">
+                    {value.description}
+                  </p>
+                </div>
               </div>
-            ))}
-          </motion.div>
-        </div>
 
-        {/* Text Content Row */}
-        <div className="container mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-12 md:gap-4 mt-32 md:mt-16 relative">
-          {values.map((value, index) => {
-            const isHovered = hoveredIndex === index;
-            return (
-              <div 
-                key={index} 
-                className="relative h-[100px] xs:h-[120px] md:h-[100px]" // Stable wrapper
-              >
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  animate={{
-                    scale: isHovered ? 1.08 : 1,
-                    zIndex: isHovered ? 10 : 0,
-                    y: isHovered ? 8 : 0,
-                  }}
-                  viewport={{ once: false }}
-                  transition={{ 
-                    type: 'spring', 
-                    stiffness: 300, 
-                    damping: 25 
-                  }}
-                  className={`absolute top-0 left-0 w-full text-center flex flex-col items-center px-6 py-8 rounded-2xl transition-shadow duration-300 ${isHovered ? 'bg-stratova-dark/90 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10' : ''}`}
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 cursor-default uppercase tracking-wide">
-                    {value.title}
-                  </h3>
-
-                  {/* Animated description — expands downward on hover */}
-                  <motion.div
-                    initial={false}
-                    animate={{
-                      opacity: isHovered ? 1 : 0,
-                      height: isHovered ? 'auto' : 0,
-                    }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    style={{ overflow: 'hidden' }}
-                  >
-                    <p className="text-sm md:text-base text-gray-300 font-medium leading-relaxed">
-                      {value.description}
-                    </p>
-                  </motion.div>
-                </motion.div>
+              {/* Connecting Dotted Line with hollow dot */}
+              <div className="flex items-center relative z-20 shrink-0">
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full border-[2.5px] border-stratova-dark bg-[#dcebf2] absolute left-0 -translate-x-1/2"></div>
+                <div className="w-8 md:w-16 border-t-[2.5px] border-dotted border-stratova-dark"></div>
               </div>
-            );
-          })}
+
+              {/* Number Circle */}
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#cbdcaa] flex items-center justify-center shrink-0 z-10 shadow-sm border border-[#bdd09b]">
+                <span className="text-xl md:text-2xl font-black text-stratova-dark">
+                  0{index + 1}
+                </span>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
+      
+      {/* Bottom Footer Elements */}
+      <div className="w-full mt-24 px-12 md:px-24 flex justify-between items-end relative max-w-7xl mx-auto">
+        {/* Bottom Left Green Dots Pattern (4x1 grid) */}
+        <div className="flex gap-2 md:gap-3 opacity-80">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="w-3 h-3 bg-stratova-green"></div>
+          ))}
+        </div>
+        
+
+      </div>
+
     </section>
   );
 };
 
-export default CoreValues;
