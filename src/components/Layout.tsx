@@ -25,15 +25,17 @@ export const Layout = () => {
       name: 'About', 
       href: isHome ? '#about' : '/#about',
       subItems: [
-        { name: 'Vision & Mission', href: isHome ? '#vision' : '/#vision' },
+        { name: 'About Us', href: isHome ? '#about' : '/#about' },
+        { name: 'Vision | Mission', href: isHome ? '#vision' : '/#vision' },
+        { name: 'Values', href: isHome ? '#values' : '/#values' },
         { name: 'Why Us', href: isHome ? '#why-choose-us' : '/#why-choose-us' },
       ]
     },
-    { name: 'Values', href: isHome ? '#values' : '/#values' },
     { 
       name: 'Services', 
       href: isHome ? '#services' : '/#services',
       subItems: [
+        { name: 'Core Services', href: isHome ? '#services' : '/#services' },
         { name: 'Support Services', href: isHome ? '#support-services' : '/#support-services' }
       ]
     },
@@ -53,8 +55,8 @@ export const Layout = () => {
     <div className="relative min-h-screen flex flex-col">
       {/* Navigation */}
       <nav style={{ willChange: 'transform', transform: 'translateZ(0)' }} className={`fixed w-full z-[200] transition-all duration-1000 ${scrolled ? 'bg-white shadow-md py-4 opacity-90' : 'bg-transparent py-6'}`}>
-        <div className="container mx-auto px-8 md:px-16 flex justify-between items-center">
-          <Link to="/" className="flex items-center h-12 md:h-16 transition-all duration-300 hover:scale-105">
+        <div className="container mx-auto px-8 md:px-24 flex justify-between items-center">
+          <Link to="/" className="flex items-center h-20 md:h-24 transition-all duration-300 hover:scale-105">
             <img src="/STRATOVA LOGO.png" alt="Stratova" className="h-full w-auto object-contain" />
           </Link>
 
@@ -63,11 +65,11 @@ export const Layout = () => {
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
                 {item.isRouterLink ? (
-                  <Link to={item.href} className="flex items-center gap-1 text-sm font-extrabold tracking-wide text-stratova-dark hover:text-stratova-blue transition-colors py-2">
+                  <Link to={item.href} className="flex items-center gap-1 text-lg font-extrabold tracking-wide text-stratova-dark hover:text-stratova-blue transition-colors py-2">
                     {item.name}
                   </Link>
                 ) : (
-                  <a href={item.href} className="flex items-center gap-1 text-sm font-extrabold tracking-wide text-stratova-dark hover:text-stratova-blue transition-colors py-2">
+                  <a href={item.href} className="flex items-center gap-1 text-lg font-extrabold tracking-wide text-stratova-dark hover:text-stratova-blue transition-colors py-2">
                     {item.name}
                     {item.subItems && <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />}
                   </a>
@@ -76,7 +78,7 @@ export const Layout = () => {
                   <div className="absolute left-0 top-full mt-0 pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0 z-50">
                     <div className="bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100">
                       {item.subItems.map(subItem => (
-                        <a key={subItem.name} href={subItem.href} className="block px-5 py-3 text-sm font-bold text-stratova-dark hover:bg-blue-50 hover:text-stratova-blue transition-colors">
+                        <a key={subItem.name} href={subItem.href} className="block px-5 py-3 text-lg font-bold text-stratova-dark hover:bg-blue-50 hover:text-stratova-blue transition-colors">
                           {subItem.name}
                         </a>
                       ))}

@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Logo } from './Logo';
 
 export const About = () => {
   return (
@@ -15,34 +14,29 @@ export const About = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-8 md:px-24 relative z-10 flex flex-col flex-grow pb-48 md:pb-64">
+      <div className="container mx-auto px-8 md:px-24 relative z-10 flex flex-col flex-grow pb-16 md:pb-24">
         
-        {/* Top Logo */}
-        <div className="w-32 md:w-48 mb-16 md:mb-24 mt-8">
-          <Logo className="w-full h-auto object-contain" />
-        </div>
-
         {/* Heading */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-8"
+          className="mb-10"
         >
-          <h2 className="text-4xl md:text-[3.5rem] font-light text-stratova-blue leading-none tracking-tight">
+          <h2 className="text-4xl md:text-[3.5rem] font-light text-stratova-blue leading-none tracking-tight mb-1">
             ABOUT
           </h2>
-          <h2 className="text-5xl md:text-[5rem] font-black text-stratova-dark leading-none tracking-tight -mt-2">
+          <h2 className="text-5xl md:text-[5rem] font-black text-stratova-dark leading-none tracking-tight -mt-2 mb-8">
             COMPANY
           </h2>
-        </motion.div>
 
-        {/* Three green dots */}
-        <div className="flex gap-3 mb-10 mt-6">
-          <div className="w-3 h-3 bg-stratova-green"></div>
-          <div className="w-3 h-3 bg-stratova-green"></div>
-          <div className="w-3 h-3 bg-stratova-green"></div>
-        </div>
+          {/* Three green dots */}
+          <div className="flex gap-2">
+            <div className="w-4 h-4 bg-stratova-green"></div>
+            <div className="w-4 h-4 bg-stratova-green"></div>
+            <div className="w-4 h-4 bg-stratova-green"></div>
+          </div>
+        </motion.div>
 
         {/* Content */}
         <div className="w-full xl:w-11/12 space-y-6 pr-0 md:pr-12">
@@ -92,10 +86,10 @@ export const About = () => {
       </div>
 
       {/* Bottom Footer Elements */}
-      <div className="absolute bottom-12 left-12 md:left-24 right-12 md:right-24 flex justify-between items-end">
+      <div className="absolute bottom-4 left-12 md:left-24 right-12 md:right-24 flex justify-between items-end">
         {/* Bottom Left Green Dots Pattern */}
-        <div className="grid grid-cols-5 gap-4 opacity-80 pb-8">
-          {[...Array(20)].map((_, i) => (
+        <div className="grid grid-cols-10 gap-4 opacity-80 pb-2">
+          {[...Array(40)].map((_, i) => (
             <div key={i} className="w-3 h-3 bg-stratova-green"></div>
           ))}
         </div>

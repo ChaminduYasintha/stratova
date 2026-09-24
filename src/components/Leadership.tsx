@@ -34,7 +34,7 @@ export const Leadership = () => {
     <section id="leadership" className="w-full relative overflow-hidden bg-white py-16 flex flex-col min-h-[100svh]">
       
       {/* Left Dark Blue Strip */}
-      <div className="absolute top-0 left-0 w-8 md:w-32 h-full bg-stratova-dark z-0"></div>
+      <div className="absolute top-0 left-0 w-4 md:w-12 h-full bg-stratova-dark z-0"></div>
 
       {/* Top Right Green Dots Pattern */}
       <div className="absolute top-12 right-12 md:right-24 grid grid-cols-2 gap-2 opacity-80 z-0">
@@ -43,7 +43,7 @@ export const Leadership = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-12 md:pl-48 md:pr-24 relative z-10 flex flex-col flex-grow">
+      <div className="container mx-auto px-8 md:px-24 relative z-10 flex flex-col flex-grow">
         
         {/* Header */}
         <motion.div 

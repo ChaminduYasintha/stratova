@@ -46,13 +46,14 @@ export const Services = () => {
   return (
     <section id="services" className="w-full relative overflow-hidden bg-stratova-dark py-20">
       
-      {/* Top Right Green Squares Pattern */}
-      <div className="absolute top-12 md:top-16 right-0 flex gap-2 opacity-80">
-        <div className="w-3 h-3 md:w-4 md:h-4 bg-stratova-green"></div>
-        <div className="w-3 h-3 md:w-4 md:h-4 bg-stratova-green translate-x-2"></div>
+      {/* Top Right Green Dots Pattern */}
+      <div className="absolute top-12 right-12 md:right-24 grid grid-cols-4 gap-2 opacity-80 z-0">
+        {[...Array(8)].map((_, i) => (
+          <div key={i} className="w-3 h-3 bg-stratova-green"></div>
+        ))}
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col">
+      <div className="container mx-auto px-8 md:px-24 relative z-10 flex flex-col">
         
         {/* Header */}
         <motion.div 
@@ -104,7 +105,7 @@ export const Services = () => {
       </div>
 
       {/* Bottom Footer Elements */}
-      <div className="w-full mt-24 px-12 md:px-24 flex justify-between items-end relative max-w-7xl mx-auto">
+      <div className="container mx-auto mt-24 px-8 md:px-24 flex justify-between items-end relative">
         {/* Bottom Center Green Dots */}
         <div className="absolute left-1/2 -translate-x-1/2 flex gap-4">
           <div className="w-4 h-4 bg-stratova-green"></div>

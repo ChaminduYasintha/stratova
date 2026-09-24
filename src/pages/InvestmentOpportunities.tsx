@@ -68,7 +68,7 @@ export const InvestmentOpportunities = () => {
 
   return (
     <div className="w-full bg-[#f8f9fa] min-h-screen pt-32 pb-24">
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div className="container mx-auto px-8 md:px-24">
         
         {/* Header Section */}
         <motion.div 

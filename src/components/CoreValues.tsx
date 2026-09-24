@@ -100,15 +100,15 @@ export const CoreValues = () => {
       </div>
       
       {/* Bottom Footer Elements */}
-      <div className="w-full mt-24 px-12 md:px-24 flex justify-between items-end relative max-w-7xl mx-auto">
-        {/* Bottom Left Green Dots Pattern (4x1 grid) */}
-        <div className="flex gap-2 md:gap-3 opacity-80">
-          {[...Array(4)].map((_, i) => (
-            <div key={i} className="w-3 h-3 bg-stratova-green"></div>
-          ))}
-        </div>
+      <div className="container mx-auto mt-24 px-8 md:px-24 flex justify-center items-end relative">
         
-
+        {/* Bottom Center Green Dots */}
+        <div className="absolute left-1/2 -translate-x-1/2 flex gap-4 pb-8">
+          <div className="w-4 h-4 bg-stratova-green"></div>
+          <div className="w-4 h-4 bg-stratova-green opacity-50"></div>
+          <div className="w-4 h-4 bg-stratova-green opacity-50"></div>
+          <div className="w-4 h-4 bg-stratova-green opacity-50"></div>
+        </div>
       </div>
 
     </section>

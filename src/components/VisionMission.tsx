@@ -6,13 +6,13 @@ export const VisionMission = () => {
     <section id="vision" className="w-full min-h-[100svh] relative overflow-x-hidden overflow-y-visible bg-stratova-dark pt-16 pb-32 md:py-16 flex flex-col">
 
       {/* Top Right Green Dots Pattern */}
-      <div className="absolute top-8 md:top-12 right-8 md:right-24 flex gap-1.5 md:gap-2 opacity-80">
-        <div className="w-2 h-2 md:w-3 md:h-3 bg-stratova-green"></div>
-        <div className="w-2 h-2 md:w-3 md:h-3 bg-stratova-green"></div>
-        <div className="w-2 h-2 md:w-3 md:h-3 bg-stratova-green"></div>
+      <div className="absolute top-12 right-12 md:right-24 grid grid-cols-4 gap-2 opacity-80 z-0">
+        {[...Array(8)].map((_, i) => (
+          <div key={i} className="w-3 h-3 bg-stratova-green"></div>
+        ))}
       </div>
 
-      <div className="container mx-auto px-6 md:px-24 relative z-10 flex flex-col flex-grow mt-8 md:mt-24">
+      <div className="container mx-auto px-8 md:px-24 relative z-10 flex flex-col flex-grow mt-8 md:mt-24">
 
         {/* Top Section with Title and Icon Watermark */}
         <div className="relative mb-12 md:mb-32 flex w-full">
@@ -24,7 +24,7 @@ export const VisionMission = () => {
               className="flex flex-col relative z-10 w-full md:w-auto"
             >
               <span className="text-2xl sm:text-3xl md:text-5xl font-normal text-stratova-green tracking-tight w-full">OUR</span>
-              <h2 className="text-4xl sm:text-5xl md:text-[6rem] font-black text-white leading-[1.1] md:leading-[0.9] tracking-tight flex flex-wrap items-center gap-x-2 md:gap-x-5">
+              <h2 className="text-4xl sm:text-5xl md:text-[80px] font-black text-white leading-[1.1] md:leading-[0.9] tracking-tight flex flex-wrap items-center gap-x-2 md:gap-x-5">
                 <span>VISION</span>
                 <span className="text-stratova-green font-light">|</span> 
                 <span>MISSION</span>
@@ -83,9 +83,9 @@ export const VisionMission = () => {
 
       {/* Bottom Footer Elements */}
       <div className="absolute bottom-8 md:bottom-12 left-6 md:left-24 right-6 md:right-24 flex justify-between items-end">
-        {/* Bottom Left Green Dots Pattern (4x3 grid) */}
-        <div className="grid grid-cols-4 gap-1.5 md:gap-3 opacity-80">
-          {[...Array(12)].map((_, i) => (
+        {/* Bottom Left Green Dots Pattern (10x4 grid) */}
+        <div className="grid grid-cols-10 gap-1.5 md:gap-3 opacity-80">
+          {[...Array(40)].map((_, i) => (
             <div key={i} className="w-2 h-2 md:w-3 md:h-3 bg-stratova-green"></div>
           ))}
         </div>
