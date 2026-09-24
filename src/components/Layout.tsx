@@ -54,7 +54,7 @@ export const Layout = () => {
   return (
     <div className="relative min-h-screen flex flex-col">
       {/* Navigation */}
-      <nav style={{ willChange: 'transform', transform: 'translateZ(0)' }} className={`fixed w-full z-[200] transition-all duration-1000 ${scrolled ? 'bg-white shadow-md py-4 opacity-90' : 'bg-transparent py-6'}`}>
+      <nav style={{ willChange: 'transform', transform: 'translateZ(0)' }} className={`fixed top-0 left-0 w-full z-[200] transition-all duration-1000 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-8 md:px-24 flex justify-between items-center">
           <Link to="/" className="flex items-center h-20 md:h-24 transition-all duration-300 hover:scale-105">
             <img src="/STRATOVA LOGO.png" alt="Stratova" className="h-full w-auto object-contain" />

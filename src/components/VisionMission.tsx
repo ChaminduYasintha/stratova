@@ -36,9 +36,9 @@ export const VisionMission = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="hidden md:block absolute top-1/2 -translate-y-[50%] left-[50%] lg:left-[70%] w-[32rem] h-[32rem] md:w-[45rem] md:h-[45rem] lg:w-[60rem] lg:h-[60rem] opacity-30 -z-10 pointer-events-none"
+              className="hidden md:block absolute top-[60%] -translate-y-[50%] left-[50%] lg:left-[65%] w-[32rem] h-[32rem] md:w-[45rem] md:h-[45rem] lg:w-[55rem] lg:h-[55rem] opacity-30 -z-10 pointer-events-none"
             >
-              <img src="/vision_mission.png" alt="Vision and Mission Icon" className="w-full h-full object-contain scale-125 lg:scale-[1.3]" />
+              <img src="/vision_mission.png" alt="Vision and Mission Icon" className="w-full h-full object-contain scale-110 lg:scale-100" />
             </motion.div>
           </div>
         </div>
