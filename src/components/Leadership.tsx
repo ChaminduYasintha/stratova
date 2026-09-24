@@ -53,7 +53,7 @@ export const Leadership = () => {
           className="mb-16 md:mb-24 mt-8"
         >
           <h2 className="text-4xl md:text-5xl font-light text-stratova-green mb-1 tracking-tight">OUR</h2>
-          <h2 className="text-5xl md:text-7xl font-black text-stratova-dark leading-[0.9] tracking-tight">
+          <h2 className="text-5xl md:text-7xl font-bold text-stratova-dark leading-[0.9] tracking-tight">
             LEADERSHIP
           </h2>
         </motion.div>

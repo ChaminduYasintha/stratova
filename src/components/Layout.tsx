@@ -54,10 +54,14 @@ export const Layout = () => {
   return (
     <div className="relative min-h-screen flex flex-col">
       {/* Navigation */}
-      <nav style={{ willChange: 'transform', transform: 'translateZ(0)' }} className={`fixed top-0 left-0 w-full z-[200] transition-all duration-1000 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'}`}>
+      <nav style={{ willChange: 'transform', transform: 'translateZ(0)' }} className={`fixed top-0 left-0 w-full z-[200] transition-all duration-1000 ${scrolled ? 'py-2 md:py-3 shadow-md' : 'py-4 md:py-5'}`}>
+        
+        {/* Background Layer to prevent mix-blend-mode bugs in browsers */}
+        <div className={`absolute inset-0 transition-all duration-1000 -z-10 ${scrolled ? 'bg-white/90 backdrop-blur-md' : 'bg-transparent'}`}></div>
+
         <div className="container mx-auto px-8 md:px-24 flex justify-between items-center">
-          <Link to="/" className="flex items-center h-20 md:h-24 transition-all duration-300 hover:scale-105">
-            <img src="/STRATOVA LOGO.png" alt="Stratova" className="h-full w-auto object-contain" />
+          <Link to="/" className="flex items-center h-16 md:h-20 transition-all duration-300 hover:scale-105 bg-transparent">
+            <img src="/Transparent_logo.png" alt="Stratova" className="h-full w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
@@ -65,11 +69,11 @@ export const Layout = () => {
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
                 {item.isRouterLink ? (
-                  <Link to={item.href} className="flex items-center gap-1 text-lg font-extrabold tracking-wide text-stratova-dark hover:text-stratova-blue transition-colors py-2">
+                  <Link to={item.href} className="flex items-center gap-1 text-lg font-semibold tracking-wide text-stratova-dark hover:text-stratova-blue transition-colors py-2">
                     {item.name}
                   </Link>
                 ) : (
-                  <a href={item.href} className="flex items-center gap-1 text-lg font-extrabold tracking-wide text-stratova-dark hover:text-stratova-blue transition-colors py-2">
+                  <a href={item.href} className="flex items-center gap-1 text-lg font-semibold tracking-wide text-stratova-dark hover:text-stratova-blue transition-colors py-2">
                     {item.name}
                     {item.subItems && <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />}
                   </a>
@@ -78,7 +82,7 @@ export const Layout = () => {
                   <div className="absolute left-0 top-full mt-0 pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0 z-50">
                     <div className="bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100">
                       {item.subItems.map(subItem => (
-                        <a key={subItem.name} href={subItem.href} className="block px-5 py-3 text-lg font-bold text-stratova-dark hover:bg-blue-50 hover:text-stratova-blue transition-colors">
+                        <a key={subItem.name} href={subItem.href} className="block px-5 py-3 text-lg font-medium text-stratova-dark hover:bg-blue-50 hover:text-stratova-blue transition-colors">
                           {subItem.name}
                         </a>
                       ))}
@@ -103,7 +107,7 @@ export const Layout = () => {
                 {item.isRouterLink ? (
                   <Link
                     to={item.href}
-                    className="flex items-center justify-center gap-2 text-xl font-bold text-stratova-dark hover:text-stratova-blue transition-colors px-8 py-3 w-full text-center"
+                    className="flex items-center justify-center gap-2 text-xl font-semibold text-stratova-dark hover:text-stratova-blue transition-colors px-8 py-3 w-full text-center"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -111,7 +115,7 @@ export const Layout = () => {
                 ) : (
                   <a
                     href={item.href}
-                    className="flex items-center justify-center gap-2 text-xl font-bold text-stratova-dark hover:text-stratova-blue transition-colors px-8 py-3 w-full text-center"
+                    className="flex items-center justify-center gap-2 text-xl font-semibold text-stratova-dark hover:text-stratova-blue transition-colors px-8 py-3 w-full text-center"
                     onClick={(e) => {
                       if (item.subItems) {
                         toggleMobileSubMenu(item.name, e);
@@ -134,7 +138,7 @@ export const Layout = () => {
                       <a
                         key={subItem.name}
                         href={subItem.href}
-                        className="text-lg font-semibold text-gray-600 hover:text-stratova-blue transition-colors px-8 py-3 w-full text-center"
+                        className="text-lg font-medium text-gray-600 hover:text-stratova-blue transition-colors px-8 py-3 w-full text-center"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {subItem.name}

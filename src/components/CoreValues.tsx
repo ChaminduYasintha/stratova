@@ -32,7 +32,7 @@ export const CoreValues = () => {
 
   return (
     <section id="values" className="w-full relative overflow-hidden bg-white py-20 flex flex-col items-center">
-      
+
       {/* Top Right Green Dots Pattern */}
       <div className="absolute top-12 right-12 md:right-24 grid grid-cols-4 gap-2 opacity-80">
         {[...Array(8)].map((_, i) => (
@@ -40,17 +40,17 @@ export const CoreValues = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 flex flex-col items-start w-full max-w-5xl relative z-10">
-        
+      <div className="container mx-auto px-8 md:px-24 flex flex-col items-start w-full max-w-5xl relative z-10">
+
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-stratova-green mb-1 tracking-tight">OUR</h2>
-          <h2 className="text-5xl md:text-7xl font-black text-stratova-dark leading-[0.9] tracking-tight uppercase">
+          <h2 className="text-5xl md:text-7xl font-bold text-stratova-dark leading-[0.9] tracking-tight uppercase">
             CORE VALUES
           </h2>
         </motion.div>
@@ -58,7 +58,7 @@ export const CoreValues = () => {
         {/* Values List */}
         <div className="flex flex-col gap-5 md:gap-7 w-full max-w-[65rem] md:pl-2">
           {values.map((value, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export const CoreValues = () => {
                 <div className="bg-stratova-dark w-24 md:w-32 flex items-center justify-center shrink-0 py-6 md:py-8">
                   {value.icon}
                 </div>
-                
+
                 {/* Right Light Blue Text Container */}
                 <div className="flex flex-col justify-center py-5 px-6 md:py-6 md:px-8 z-10 flex-grow">
                   <h3 className="text-lg md:text-xl font-black text-stratova-dark mb-1 md:mb-1.5">{value.title}</h3>
@@ -98,17 +98,17 @@ export const CoreValues = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Bottom Footer Elements */}
-      <div className="container mx-auto mt-24 px-8 md:px-24 flex justify-center items-end relative">
-        
-        {/* Bottom Center Green Dots */}
-        <div className="absolute left-1/2 -translate-x-1/2 flex gap-4 pb-8">
-          <div className="w-4 h-4 bg-stratova-green"></div>
-          <div className="w-4 h-4 bg-stratova-green opacity-50"></div>
-          <div className="w-4 h-4 bg-stratova-green opacity-50"></div>
-          <div className="w-4 h-4 bg-stratova-green opacity-50"></div>
+      <div className="w-full mt-24 px-12 md:px-24 flex justify-between items-end relative max-w-7xl mx-auto">
+        {/* Bottom Left Green Dots Pattern (4x1 grid) */}
+        <div className="flex gap-2 md:gap-3 opacity-80">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="w-3 h-3 bg-stratova-green"></div>
+          ))}
         </div>
+
+
       </div>
 
     </section>

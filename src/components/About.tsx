@@ -23,10 +23,10 @@ export const About = () => {
           viewport={{ once: true }}
           className="mb-10"
         >
-          <h2 className="text-4xl md:text-[3.5rem] font-light text-stratova-blue leading-none tracking-tight mb-1">
+          <h2 className="text-4xl md:text-5xl font-light text-stratova-blue mb-1 tracking-tight">
             ABOUT
           </h2>
-          <h2 className="text-5xl md:text-[5rem] font-black text-stratova-dark leading-none tracking-tight -mt-2 mb-8">
+          <h2 className="text-5xl md:text-7xl font-bold text-stratova-dark leading-[0.9] tracking-tight mb-8">
             COMPANY
           </h2>
 
@@ -89,7 +89,7 @@ export const About = () => {
       <div className="absolute bottom-4 left-12 md:left-24 right-12 md:right-24 flex justify-between items-end">
         {/* Bottom Left Green Dots Pattern */}
         <div className="grid grid-cols-10 gap-4 opacity-80 pb-2">
-          {[...Array(40)].map((_, i) => (
+          {[...Array(20)].map((_, i) => (
             <div key={i} className="w-3 h-3 bg-stratova-green"></div>
           ))}
         </div>

@@ -66,7 +66,7 @@ export const WhyChooseUs = () => {
             className="relative z-10"
           >
             <h2 className="text-4xl md:text-5xl font-light text-stratova-green mb-1 tracking-tight">WHY CHOOSE</h2>
-            <h2 className="text-5xl md:text-7xl font-black text-stratova-dark tracking-tight leading-none">STRATOVA?</h2>
+            <h2 className="text-5xl md:text-7xl font-bold text-stratova-dark tracking-tight leading-[0.9]">STRATOVA?</h2>
           </motion.div>
         </div>
       </div>

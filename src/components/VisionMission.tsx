@@ -23,8 +23,8 @@ export const VisionMission = () => {
               viewport={{ once: true }}
               className="flex flex-col relative z-10 w-full md:w-auto"
             >
-              <span className="text-2xl sm:text-3xl md:text-5xl font-normal text-stratova-green tracking-tight w-full">OUR</span>
-              <h2 className="text-4xl sm:text-5xl md:text-[80px] font-black text-white leading-[1.1] md:leading-[0.9] tracking-tight flex flex-wrap items-center gap-x-2 md:gap-x-5">
+              <span className="text-4xl md:text-5xl font-light text-stratova-green tracking-tight w-full mb-1">OUR</span>
+              <h2 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] md:leading-[0.9] tracking-tight flex flex-wrap items-center gap-x-2 md:gap-x-5">
                 <span>VISION</span>
                 <span className="text-stratova-green font-light">|</span> 
                 <span>MISSION</span>
@@ -85,7 +85,7 @@ export const VisionMission = () => {
       <div className="absolute bottom-8 md:bottom-12 left-6 md:left-24 right-6 md:right-24 flex justify-between items-end">
         {/* Bottom Left Green Dots Pattern (10x4 grid) */}
         <div className="grid grid-cols-10 gap-1.5 md:gap-3 opacity-80">
-          {[...Array(40)].map((_, i) => (
+          {[...Array(20)].map((_, i) => (
             <div key={i} className="w-2 h-2 md:w-3 md:h-3 bg-stratova-green"></div>
           ))}
         </div>

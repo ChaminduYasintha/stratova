@@ -25,9 +25,9 @@ export const SupportServices = () => {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-stratova-blue mb-1 tracking-tight">OUR</h2>
-          <h2 className="text-5xl md:text-7xl font-black text-stratova-dark leading-[0.9] tracking-tight">
-            Support Services
+          <h2 className="text-4xl md:text-5xl font-light text-stratova-blue mb-1 tracking-tight">OUR</h2>
+          <h2 className="text-5xl md:text-7xl font-bold text-stratova-dark leading-[0.9] tracking-tight">
+            SUPPORT SERVICES
           </h2>
         </motion.div>
 

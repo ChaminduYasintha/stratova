@@ -62,8 +62,8 @@ export const Services = () => {
           viewport={{ once: true }}
           className="mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-normal text-[#1b80a4] mb-1 tracking-tight">OUR</h2>
-          <h2 className="text-5xl md:text-7xl font-black text-white leading-[0.9] tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-light text-[#1b80a4] mb-1 tracking-tight">OUR</h2>
+          <h2 className="text-5xl md:text-7xl font-bold text-white leading-[0.9] tracking-tight">
             SERVICES
           </h2>
         </motion.div>

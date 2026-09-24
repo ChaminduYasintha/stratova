@@ -24,7 +24,7 @@ export const Contact = () => {
             className="relative z-10"
           >
             <h2 className="text-4xl md:text-5xl font-light text-stratova-blue mb-1 tracking-tight">GET</h2>
-            <h2 className="text-5xl md:text-7xl font-black text-white tracking-tight leading-none mb-8">IN TOUCH</h2>
+            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-[0.9] mb-8">IN TOUCH</h2>
             
             {/* Three green dots */}
             <div className="flex gap-2">
@@ -86,42 +86,54 @@ export const Contact = () => {
               </div>
             </div>
 
-            {/* Right: Creative Uneven Static Green Dots Pattern */}
-            <div className="hidden lg:flex w-full lg:w-1/2 justify-end items-start pt-2">
-              <div className="grid grid-cols-12 gap-4 md:gap-5">
-                {[...Array(96)].map((_, i) => {
-                  const row = Math.floor(i / 12);
-                  const col = i % 12;
-                  
-                  // A specific fixed pattern that dissolves towards the top-left
-                  const pattern = [
-                    [0,0,0,1,0,0,0,1,0,0,0,1],
-                    [0,0,0,0,0,1,0,0,0,1,1,0],
-                    [0,1,0,0,1,0,0,1,0,0,1,1],
-                    [0,0,1,0,0,1,1,0,1,1,0,1],
-                    [1,0,0,1,0,1,1,1,0,1,1,1],
-                    [0,1,1,0,1,1,1,1,1,1,1,1],
-                    [1,0,1,1,1,1,1,1,1,1,1,1],
-                    [1,1,1,1,1,1,1,1,1,1,1,1],
-                  ];
-                  
-                  const val = pattern[row][col];
-                  
-                  if (val === 0) {
-                    return <div key={i} className="w-3 h-3 md:w-4 md:h-4"></div>;
-                  }
+          </div>
+        </div>
 
-                  // Add varying opacities to make it look dynamic
-                  const isFaded = (row + col) % 3 === 0;
-                  const isVeryFaded = (row * col) % 5 === 0;
-                  const opacityClass = isVeryFaded ? "opacity-20" : isFaded ? "opacity-40" : "opacity-80";
+        {/* Right: Creative Uneven Static Green Dots Pattern - Absolute at Bottom Right */}
+        <div className="hidden lg:block absolute bottom-0 right-8 md:right-24 z-0 pointer-events-none">
+          <div className="grid grid-cols-12 gap-4 md:gap-5 pb-8">
+            {[...Array(192)].map((_, i) => {
+              const row = Math.floor(i / 12);
+              const col = i % 12;
+              
+              // A specific fixed pattern that dissolves towards the top-left (16 rows)
+              const pattern = [
+                // Top very sparse rows
+                [0,0,0,0,0,0,0,1,0,0,0,0],
+                [0,0,0,1,0,0,0,0,0,1,0,0],
+                [0,0,0,0,0,1,0,0,0,0,0,1],
+                [1,0,0,0,0,0,0,1,0,0,0,0],
+                [0,0,1,0,0,0,0,0,0,0,1,0],
+                [0,0,0,0,1,0,0,0,1,0,0,0],
+                [0,1,0,0,0,0,1,0,0,0,0,1],
+                [0,0,0,1,0,0,0,0,0,1,0,0],
+                // Middle gradually denser
+                [0,0,0,1,0,0,0,1,0,0,0,1],
+                [0,0,0,0,0,1,0,0,0,1,1,0],
+                [0,1,0,0,1,0,0,1,0,0,1,1],
+                [0,0,1,0,0,1,1,0,1,1,0,1],
+                // Bottom dense
+                [1,0,0,1,0,1,1,1,0,1,1,1],
+                [0,1,1,0,1,1,1,1,1,1,1,1],
+                [1,0,1,1,1,1,1,1,1,1,1,1],
+                [1,1,1,1,1,1,1,1,1,1,1,1],
+              ];
+              
+              const val = pattern[row][col];
+              
+              if (val === 0) {
+                return <div key={i} className="w-3 h-3 md:w-4 md:h-4"></div>;
+              }
 
-                  return (
-                    <div key={i} className={`w-3 h-3 md:w-4 md:h-4 bg-stratova-green ${opacityClass}`}></div>
-                  );
-                })}
-              </div>
-            </div>
+              // Add varying opacities to make it look dynamic
+              const isFaded = (row + col) % 3 === 0;
+              const isVeryFaded = (row * col) % 5 === 0;
+              const opacityClass = isVeryFaded ? "opacity-20" : isFaded ? "opacity-40" : "opacity-80";
+
+              return (
+                <div key={i} className={`w-3 h-3 md:w-4 md:h-4 bg-stratova-green ${opacityClass}`}></div>
+              );
+            })}
           </div>
         </div>
       </div>
