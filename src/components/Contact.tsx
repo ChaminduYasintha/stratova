@@ -90,13 +90,13 @@ export const Contact = () => {
         </div>
 
         {/* Right: Creative Uneven Static Green Dots Pattern - Absolute at Bottom Right */}
-        <div className="hidden lg:block absolute bottom-0 right-8 md:right-24 z-0 pointer-events-none">
-          <div className="grid grid-cols-12 gap-4 md:gap-5 pb-8">
+        <div className="hidden lg:block absolute bottom-0 right-0 z-0 pointer-events-none">
+          <div className="grid grid-cols-12 gap-4 md:gap-5 pb-8 pr-4 md:pr-8">
             {[...Array(192)].map((_, i) => {
               const row = Math.floor(i / 12);
               const col = i % 12;
               
-              // A specific fixed pattern that dissolves towards the top-left (16 rows)
+              // A specific fixed pattern that dissolves towards the top-left (16x12)
               const pattern = [
                 // Top very sparse rows
                 [0,0,0,0,0,0,0,1,0,0,0,0],

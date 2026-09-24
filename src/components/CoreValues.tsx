@@ -31,7 +31,7 @@ export const CoreValues = () => {
   ];
 
   return (
-    <section id="values" className="w-full relative overflow-hidden bg-white py-20 flex flex-col items-center">
+    <section id="values" className="w-full relative overflow-hidden bg-white pt-20 pb-8 flex flex-col items-center">
 
       {/* Top Right Green Dots Pattern */}
       <div className="absolute top-12 right-12 md:right-24 grid grid-cols-4 gap-2 opacity-80">
@@ -100,15 +100,13 @@ export const CoreValues = () => {
       </div>
 
       {/* Bottom Footer Elements */}
-      <div className="w-full mt-24 px-12 md:px-24 flex justify-between items-end relative max-w-7xl mx-auto">
-        {/* Bottom Left Green Dots Pattern (4x1 grid) */}
-        <div className="flex gap-2 md:gap-3 opacity-80">
-          {[...Array(4)].map((_, i) => (
-            <div key={i} className="w-3 h-3 bg-stratova-green"></div>
-          ))}
+      <div className="w-full mt-12 pb-8 px-12 md:px-24 flex justify-center items-center relative max-w-7xl mx-auto">
+        <div className="flex-1 flex justify-center gap-4">
+          <div className="w-4 h-4 bg-stratova-green"></div>
+          <div className="w-4 h-4 bg-stratova-green opacity-50"></div>
+          <div className="w-4 h-4 bg-stratova-green opacity-50"></div>
+          <div className="w-4 h-4 bg-stratova-green opacity-50"></div>
         </div>
-
-
       </div>
 
     </section>
