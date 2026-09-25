@@ -54,10 +54,10 @@ export const Layout = () => {
   return (
     <div className="relative min-h-screen flex flex-col">
       {/* Navigation */}
-      <nav style={{ willChange: 'transform', transform: 'translateZ(0)' }} className={`fixed top-0 left-0 w-full z-[200] transition-all duration-1000 ${scrolled ? 'py-2 md:py-3 shadow-md' : 'py-4 md:py-5'}`}>
+      <nav style={{ willChange: 'transform', transform: 'translateZ(0)' }} className={`fixed top-0 left-0 w-full z-[200] transition-all duration-1000 ${scrolled ? 'py-2 md:py-3 shadow-md' : 'py-2 md:py-3'}`}>
         
         {/* Background Layer to prevent mix-blend-mode bugs in browsers */}
-        <div className={`absolute inset-0 transition-all duration-1000 -z-10 ${scrolled ? 'bg-white/90 backdrop-blur-md' : 'bg-transparent'}`}></div>
+        <div className={`absolute inset-0 transition-all duration-1000 -z-10 ${scrolled ? 'bg-white/90 backdrop-blur-md' : 'bg-white'}`}></div>
 
         <div className="container mx-auto px-8 md:px-24 flex justify-between items-center">
           <Link to="/" className="flex items-center h-16 md:h-20 transition-all duration-300 hover:scale-105 bg-transparent">
