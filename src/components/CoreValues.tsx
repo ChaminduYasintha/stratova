@@ -34,7 +34,7 @@ export const CoreValues = () => {
     <section id="values" className="w-full relative overflow-hidden bg-white pt-20 pb-8 flex flex-col items-center">
 
       {/* Top Right Green Dots Pattern */}
-      <div className="absolute top-12 right-12 md:right-24 grid grid-cols-4 gap-2 opacity-80">
+      <div className="absolute top-12 right-12 md:right-24 grid grid-cols-4 gap-2 opacity-80 hidden md:grid">
         {[...Array(8)].map((_, i) => (
           <div key={i} className="w-3 h-3 bg-stratova-green"></div>
         ))}
@@ -85,12 +85,12 @@ export const CoreValues = () => {
               {/* Connecting Dotted Line with hollow dot */}
               <div className="flex items-center relative z-20 shrink-0">
                 <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full border-[2.5px] border-stratova-dark bg-[#dcebf2] absolute left-0 -translate-x-1/2"></div>
-                <div className="w-8 md:w-16 border-t-[2.5px] border-dotted border-stratova-dark"></div>
+                <div className="w-4 md:w-16 border-t-[2.5px] border-dotted border-stratova-dark"></div>
               </div>
 
               {/* Number Circle */}
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#cbdcaa] flex items-center justify-center shrink-0 z-10 shadow-sm border border-[#bdd09b]">
-                <span className="text-xl md:text-2xl font-black text-stratova-dark">
+              <div className="w-12 h-12 md:w-20 md:h-20 rounded-full bg-[#cbdcaa] flex items-center justify-center shrink-0 z-10 shadow-sm border border-[#bdd09b]">
+                <span className="text-base md:text-2xl font-black text-stratova-dark">
                   0{index + 1}
                 </span>
               </div>

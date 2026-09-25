@@ -8,7 +8,7 @@ export const About = () => {
       className="relative w-full min-h-[100svh] bg-white overflow-hidden flex flex-col py-16"
     >
       {/* Top Right Green Dots Pattern */}
-      <div className="absolute top-0 right-0 grid grid-cols-4 gap-3 p-8 opacity-80">
+      <div className="absolute top-0 right-0 grid grid-cols-4 gap-3 p-8 opacity-80 hidden md:grid">
         {[...Array(16)].map((_, i) => (
           <div key={i} className="w-3 h-3 bg-stratova-green"></div>
         ))}
@@ -88,7 +88,7 @@ export const About = () => {
       {/* Bottom Footer Elements */}
       <div className="absolute bottom-4 left-12 md:left-24 right-12 md:right-24 flex justify-between items-end">
         {/* Bottom Left Green Dots Pattern */}
-        <div className="grid grid-cols-10 gap-4 opacity-80 pb-2">
+        <div className="hidden md:grid grid-cols-10 gap-4 opacity-80 pb-2">
           {[...Array(20)].map((_, i) => (
             <div key={i} className="w-3 h-3 bg-stratova-green"></div>
           ))}

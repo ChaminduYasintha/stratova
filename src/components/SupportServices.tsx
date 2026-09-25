@@ -45,7 +45,7 @@ export const SupportServices = () => {
         </motion.p>
 
         {/* List of Services */}
-        <div className="flex flex-col gap-6 max-w-3xl w-fit mx-auto">
+        <div className="flex flex-col gap-6 w-full max-w-3xl">
           {supportServices.map((service, index) => (
             <motion.div 
               key={index}
@@ -73,7 +73,7 @@ export const SupportServices = () => {
               
               {/* Text Container with bottom line shadow */}
               <div className="flex items-center pr-8 py-2 w-auto relative -ml-8 pl-12 md:-ml-10 md:pl-16 z-0 min-h-[74px] md:min-h-[92px]">
-                <h3 className="text-lg md:text-2xl font-bold text-stratova-dark whitespace-nowrap">
+                <h3 className="text-base md:text-2xl font-bold text-stratova-dark leading-tight">
                   {service.title}
                 </h3>
                 {/* Shadow Line starting from the bottom tip of the hexagon */}

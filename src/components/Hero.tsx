@@ -2,11 +2,11 @@ import React from 'react';
 
 export const Hero = () => {
   return (
-    <section className="relative w-full min-h-[100svh] flex flex-col bg-stratova-dark">
+    <section className="relative w-full min-h-0 md:min-h-[100svh] flex flex-col bg-stratova-dark">
       {/* Dark Blue Hero Section */}
-      <div className="relative w-full flex-1 overflow-hidden">
+      <div className="relative w-full flex-1 flex flex-col overflow-hidden">
         {/* Right Side Graphics - Growth Chart Style */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
           <svg
             className="absolute right-0 top-0 h-full w-full"
             viewBox="0 0 1100 700"
@@ -85,36 +85,35 @@ export const Hero = () => {
             {/* Dot 2 - small blue */}
             <circle cx="645" cy="688" r="2.5" fill="#3ab3e8" filter="url(#blue-glow)" />
 
-            {/* Dot 3 - LARGE GREEN glow */}
-            <circle cx="742" cy="593" r="5.5" fill="#83b620" filter="url(#green-glow)" />
+            {/* Dot 3 - LARGE BLUE glow */}
+            <circle cx="742" cy="593" r="5.5" fill="#3ab3e8" filter="url(#blue-glow)" />
 
             {/* Dot 4 - small blue */}
             <circle cx="832" cy="478" r="2.5" fill="#3ab3e8" filter="url(#blue-glow)" />
 
-            {/* Dot 5 - LARGE GREEN glow */}
-            <circle cx="926" cy="328" r="5.5" fill="#83b620" filter="url(#green-glow)" />
+            {/* Dot 5 - LARGE BLUE glow */}
+            <circle cx="926" cy="328" r="5.5" fill="#3ab3e8" filter="url(#blue-glow)" />
 
             {/* Dot 6 - small blue */}
             <circle cx="1002" cy="195" r="2.5" fill="#3ab3e8" filter="url(#blue-glow)" />
 
-            {/* Dot 7 - small green at top */}
-            <circle cx="1045" cy="115" r="2.5" fill="#83b620" opacity="0.9" />
+            {/* Dot 7 - small blue at top */}
+            <circle cx="1045" cy="115" r="2.5" fill="#3ab3e8" opacity="0.9" />
 
             {/* Tiny floating accent dots */}
-            <circle cx="720" cy="450" r="1.5" fill="#83b620" opacity="0.3" />
-            <circle cx="870" cy="570" r="1.5" fill="#83b620" opacity="0.2" />
-            <circle cx="1050" cy="390" r="1.5" fill="#83b620" opacity="0.35" />
+            <circle cx="720" cy="450" r="1.5" fill="#3ab3e8" opacity="0.3" />
+            <circle cx="870" cy="570" r="1.5" fill="#3ab3e8" opacity="0.2" />
+            <circle cx="1050" cy="390" r="1.5" fill="#3ab3e8" opacity="0.35" />
           </svg>
         </div>
 
-        <div className="container mx-auto h-full relative z-10 flex flex-col justify-center px-8 md:px-24 pt-32 pb-16 md:pt-40 md:pb-24">
-          {/* Vertical Green Squares Accent on Right Side */}
-          <div className="absolute right-4 md:right-12 top-[45%] -translate-y-1/2 flex flex-col gap-6 md:gap-8 z-20">
-            {[1, 2, 3, 4, 5].map((item) => (
-              <div key={item} className="w-4 h-4 md:w-5 md:h-5 bg-stratova-green"></div>
-            ))}
-          </div>
+        <div className="hidden md:grid absolute right-4 md:right-8 top-[45%] -translate-y-1/2 grid-cols-2 gap-x-2 gap-y-3 md:gap-y-4 z-20">
+          {[...Array(10)].map((_, i) => (
+            <div key={i} className="w-4 h-4 md:w-5 md:h-5 bg-stratova-green"></div>
+          ))}
+        </div>
 
+        <div className="container mx-auto flex-1 relative z-10 flex flex-col justify-center px-8 md:px-24 py-32 md:pt-24 md:pb-0">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-none mb-4 md:mb-6">
             Stratova
           </h1>

@@ -51,7 +51,7 @@ export const WhyChooseUs = () => {
       {/* Top White Section */}
       <div className="w-full bg-white relative">
         {/* Top Right Green Dots Pattern */}
-        <div className="absolute top-12 right-12 md:right-24 grid grid-cols-4 gap-2 opacity-80 z-0">
+        <div className="absolute top-12 right-12 md:right-24 grid grid-cols-4 gap-2 opacity-80 z-0 hidden md:grid">
           {[...Array(8)].map((_, i) => (
             <div key={i} className="w-3 h-3 bg-stratova-green"></div>
           ))}

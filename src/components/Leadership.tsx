@@ -37,7 +37,7 @@ export const Leadership = () => {
       <div className="absolute top-0 left-0 w-4 md:w-12 h-full bg-stratova-dark z-0"></div>
 
       {/* Top Right Green Dots Pattern */}
-      <div className="absolute top-12 right-12 md:right-24 grid grid-cols-2 gap-2 opacity-80 z-0">
+      <div className="absolute top-12 right-12 md:right-24 grid grid-cols-2 gap-2 opacity-80 z-0 hidden md:grid">
         {[...Array(8)].map((_, i) => (
           <div key={i} className="w-3 h-3 bg-stratova-green"></div>
         ))}
@@ -67,7 +67,7 @@ export const Leadership = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="flex flex-col md:flex-row gap-8 md:gap-12 w-full items-stretch"
+              className={`flex flex-col gap-8 md:gap-12 w-full items-stretch ${index === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
             >
               {/* Bio Content (Left ~55%) */}
               <div className="flex-1 flex flex-col justify-start">
