@@ -45,7 +45,7 @@ export const SupportServices = () => {
         </motion.p>
 
         {/* List of Services */}
-        <div className="flex flex-col gap-6 w-full max-w-3xl">
+        <div className="flex flex-col gap-6 w-full max-w-5xl">
           {supportServices.map((service, index) => (
             <motion.div 
               key={index}
@@ -53,7 +53,7 @@ export const SupportServices = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="flex items-center relative pl-4 md:pl-6"
+              className="flex items-center relative pl-20 md:pl-48"
             >
               {/* Hexagon */}
               <div className="w-16 h-[74px] md:w-20 md:h-[92px] flex items-center justify-center z-10 shrink-0 relative">
