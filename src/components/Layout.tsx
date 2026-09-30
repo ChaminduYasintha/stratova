@@ -25,10 +25,10 @@ export const Layout = () => {
       name: 'About', 
       href: isHome ? '#about' : '/#about',
       subItems: [
-        { name: 'About Us', href: isHome ? '#about' : '/#about' },
-        { name: 'Vision | Mission', href: isHome ? '#vision' : '/#vision' },
+        { name: 'Vision / Mission', href: isHome ? '#vision' : '/#vision' },
         { name: 'Values', href: isHome ? '#values' : '/#values' },
         { name: 'Why Us', href: isHome ? '#why-choose-us' : '/#why-choose-us' },
+        { name: 'About Us', href: isHome ? '#about' : '/#about' },
       ]
     },
     { 
