@@ -74,7 +74,7 @@ export const WhyChooseUs = () => {
       {/* Bottom Dark Blue Section */}
       <div className="w-full bg-stratova-dark flex-grow flex flex-col items-center">
         <div className="container mx-auto pt-10 pb-16 px-8 md:px-24 flex flex-col items-center">
-          <div className="flex flex-col gap-6 md:gap-8 w-fit max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16 w-full">
             {reasons.map((reason, index) => (
               <motion.div
                 key={index}
@@ -91,7 +91,7 @@ export const WhyChooseUs = () => {
                 
                 {/* Text */}
                 <div className="flex-1">
-                  <h3 className="text-lg md:text-2xl font-medium text-white leading-snug whitespace-pre-line">
+                  <h3 className="text-base md:text-lg lg:text-xl font-medium text-white leading-snug whitespace-pre-line">
                     {reason.title}
                   </h3>
                 </div>

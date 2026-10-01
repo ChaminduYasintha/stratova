@@ -69,7 +69,7 @@ export const Services = () => {
         </motion.div>
 
         {/* Services List */}
-        <div className="flex flex-col gap-10 md:gap-12 w-full max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 md:gap-12 w-full mx-auto">
           {services.map((service, index) => (
             <motion.div 
               key={index}
@@ -77,7 +77,7 @@ export const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="flex flex-col md:flex-row items-center gap-6 md:gap-12 w-full"
+              className="flex flex-col items-start gap-6 w-full"
             >
               {/* Icon (Left) */}
               <div className="w-24 h-24 md:w-36 md:h-36 flex items-center justify-center shrink-0">

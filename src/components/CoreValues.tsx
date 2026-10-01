@@ -31,7 +31,7 @@ export const CoreValues = () => {
   ];
 
   return (
-    <section id="values" className="w-full relative overflow-hidden bg-white pt-20 pb-8 flex flex-col items-center">
+    <section id="values" className="w-full relative overflow-hidden bg-white pt-20 pb-8 flex flex-col">
 
       {/* Top Right Green Dots Pattern */}
       <div className="absolute top-12 right-12 md:right-24 grid grid-cols-4 gap-2 opacity-80 hidden md:grid">
@@ -40,7 +40,7 @@ export const CoreValues = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-8 md:px-24 flex flex-col items-start w-full max-w-5xl relative z-10">
+      <div className="container mx-auto px-8 md:px-24 flex flex-col relative z-10">
 
         {/* Header */}
         <motion.div
@@ -56,7 +56,7 @@ export const CoreValues = () => {
         </motion.div>
 
         {/* Values List */}
-        <div className="flex flex-col gap-5 md:gap-7 w-full max-w-[65rem] md:pl-2">
+        <div className="flex flex-col gap-5 md:gap-7 w-full max-w-[65rem] mx-auto md:pl-2">
           {values.map((value, index) => (
             <motion.div
               key={index}
