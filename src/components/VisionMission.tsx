@@ -44,7 +44,7 @@ export const VisionMission = () => {
         </div>
 
         {/* Content Section */}
-        <div className="flex flex-col gap-10 md:gap-16 max-w-4xl mx-auto mb-12 md:mb-24 w-full">
+        <div className="flex flex-col gap-10 md:gap-16 max-w-4xl mb-12 md:mb-24 w-full">
           {/* Vision */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
