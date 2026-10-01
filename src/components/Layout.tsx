@@ -39,7 +39,7 @@ export const Layout = () => {
         { name: 'Support Services', href: isHome ? '#support-services' : '/#support-services' }
       ]
     },
-    { name: 'Investment Opportunities', href: '/investments', isRouterLink: true },
+    { name: 'Investment offers', href: '/investments', isRouterLink: true },
     { name: 'Leadership', href: isHome ? '#leadership' : '/#leadership' },
     { name: 'Contact', href: isHome ? '#contact' : '/#contact' },
   ];
