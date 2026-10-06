@@ -6,20 +6,20 @@ const supportServices = [
   { num: "02", title: "LEGAL ADVISORY SERVICES" },
   { num: "03", title: "SALES , MARKETING & DISTRIBUTION" },
   { num: "04", title: "COMPANY SECRETARY SERVICES" },
-  { num: "06", title: "ACCOUNTING , AUDITING, BOOKKEEPING" },
-  { num: "07", title: "HUMAN RESOURCE MANAGMENT" },
-  { num: "08", title: "TAXATION SERVICES" },
-  { num: "09", title: "VALUATION SERVICES" }
+  { num: "05", title: "ACCOUNTING , AUDITING, BOOKKEEPING" },
+  { num: "06", title: "HUMAN RESOURCE MANAGMENT" },
+  { num: "07", title: "TAXATION SERVICES" },
+  { num: "08", title: "VALUATION SERVICES" }
 ];
 
 export const SupportServices = () => {
   return (
     <section id="support-services" className="w-full relative overflow-hidden bg-white py-20 min-h-[100svh] flex flex-col">
-      
+
       <div className="container mx-auto px-8 md:px-24 relative z-10 flex flex-col flex-grow">
-        
+
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -37,7 +37,7 @@ export const SupportServices = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-lg md:text-xl text-stratova-dark font-medium leading-relaxed max-w-3xl mb-16"
+          className="text-lg md:text-xl text-stratova-dark font-medium leading-relaxed max-w-2xl mb-16 text-justify"
         >
           We assist our clients in accessing and engaging with a
           network of specialised support service providers based on
@@ -47,7 +47,7 @@ export const SupportServices = () => {
         {/* List of Services */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-8 w-full mt-8">
           {supportServices.map((service, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -58,19 +58,19 @@ export const SupportServices = () => {
               {/* Hexagon */}
               <div className="w-16 h-[74px] md:w-20 md:h-[92px] flex items-center justify-center z-10 shrink-0 relative">
                 <svg viewBox="-12 -12 124 139.47" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute w-full h-full text-stratova-green drop-shadow-md">
-                  <path 
-                    d="M50 0 L100 28.87 L100 86.6 L50 115.47 L0 86.6 L0 28.87 Z" 
-                    fill="currentColor" 
-                    stroke="currentColor" 
-                    strokeWidth="16" 
-                    strokeLinejoin="round" 
+                  <path
+                    d="M50 0 L100 28.87 L100 86.6 L50 115.47 L0 86.6 L0 28.87 Z"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    strokeWidth="16"
+                    strokeLinejoin="round"
                   />
                 </svg>
                 <div className="w-9 h-9 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center z-10 shadow-sm relative">
                   <span className="text-sm md:text-[15px] font-black text-stratova-dark">{service.num}.</span>
                 </div>
               </div>
-              
+
               {/* Text Container with bottom line shadow */}
               <div className="flex items-center pr-8 py-2 w-auto relative -ml-8 pl-12 md:-ml-10 md:pl-16 z-0 min-h-[74px] md:min-h-[92px]">
                 <h3 className="text-base md:text-lg lg:text-xl font-bold text-stratova-dark leading-tight">

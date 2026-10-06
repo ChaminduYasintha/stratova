@@ -88,7 +88,7 @@ export const Leadership = () => {
 
                 <div className="space-y-4">
                   {leader.bio.map((paragraph, pIndex) => (
-                    <p key={pIndex} className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">
+                    <p key={pIndex} className="text-sm md:text-base text-gray-700 font-medium leading-relaxed text-justify">
                       {paragraph}
                     </p>
                   ))}

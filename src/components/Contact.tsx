@@ -40,10 +40,10 @@ export const Contact = () => {
       <div className="w-full bg-white flex-grow relative flex flex-col">
         <div className="container mx-auto pt-16 pb-24 px-8 md:px-24 flex-grow relative flex flex-col">
           <div className="max-w-4xl space-y-8 mb-16">
-            <p className="text-lg md:text-xl text-stratova-dark font-medium leading-relaxed">
+            <p className="text-lg md:text-xl text-stratova-dark font-medium leading-relaxed text-justify">
               Partner with Stratova to unlock strategic opportunities and sustainable growth.
             </p>
-            <p className="text-lg md:text-xl text-stratova-dark font-medium leading-relaxed">
+            <p className="text-lg md:text-xl text-stratova-dark font-medium leading-relaxed text-justify">
               Connect with our team to explore bespoke advisory solutions, investment
               opportunities, and strategic partnerships designed to deliver measurable
               results for your company.

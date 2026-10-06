@@ -53,7 +53,7 @@ export const VisionMission = () => {
             className="flex flex-col"
           >
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-stratova-blue mb-3 md:mb-4">VISION</h3>
-            <p className="text-base sm:text-lg md:text-xl text-gray-200 font-medium leading-relaxed max-w-3xl">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 font-medium leading-relaxed max-w-3xl text-justify">
               To be a trusted partner of choice for businesses
               and investors by delivering innovative financial and
               strategic solutions that drive sustainable growth,
@@ -71,7 +71,7 @@ export const VisionMission = () => {
             className="flex flex-col"
           >
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-stratova-blue mb-3 md:mb-4">MISSION</h3>
-            <p className="text-base sm:text-lg md:text-xl text-gray-200 font-medium leading-relaxed max-w-3xl">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 font-medium leading-relaxed max-w-3xl text-justify">
               To deliver innovative and tailored financial solutions
               that empower businesses, entrepreneurs, and investors
               to achieve sustainable growth and long-term success.

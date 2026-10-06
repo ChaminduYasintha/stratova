@@ -45,14 +45,9 @@ export const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-stratova-dark leading-relaxed font-medium"
+            className="text-lg md:text-xl text-stratova-dark leading-relaxed font-medium text-justify"
           >
-            Stratova Private Limited is a bespoke Multinational Business Consulting
-            Firm incorporated in 2025 with a commitement to delivering innovative
-            and reliable financial solutions. We serve a wide spectrum of clients,
-            including small and medium enterprises (SMEs), large corporations,
-            institutional investors, high-net-worth individuals and not-for-profit
-            organisations.
+            Stratova Private Limited is a multinational business consulting firm established in 2025, providing innovative financial and strategic solutions to businesses, investors, and organisations.
           </motion.p>
 
           <motion.p
@@ -60,15 +55,9 @@ export const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-stratova-dark leading-relaxed font-medium"
+            className="text-lg md:text-xl text-stratova-dark leading-relaxed font-medium text-justify"
           >
-            Our multidisciplinary team brings together expertise from investment in
-            private equity and debt, business advisory service, restructing of
-            distress companies and taliored trainings. By combining deep industry
-            knowledge with practical experience, we provide customised strategies
-            that help clients navigate complex financial landscapes, seize
-            emerging opportunities, and achieve sustainable growth in today's
-            ever evolving market.
+            Our multidisciplinary team brings expertise in investment, business advisory, restructuring, and professional training, delivering tailored strategies that help clients navigate complex financial challenges, identify opportunities, and achieve sustainable growth.
           </motion.p>
           
           <motion.p
@@ -76,10 +65,9 @@ export const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-lg md:text-xl text-stratova-dark leading-relaxed font-medium pt-4"
+            className="text-lg md:text-xl text-stratova-dark leading-relaxed font-medium pt-4 text-justify"
           >
-            Stratova has its own subsidiary : StratovaX Global in Malaysia and also
-            business partnerships in Austrailia, UAE and Singapore.
+            With a growing international presence through StratovaX Global in Malaysia and strategic partnerships across Australia, the UAE, and Singapore, Stratova is committed to creating long-term value for its clients.
           </motion.p>
         </div>
 
