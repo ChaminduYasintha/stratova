@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, Globe, MapPin } from 'lucide-react';
+import { Phone, Mail, Globe, MapPin, User } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export const Contact = () => {
@@ -15,7 +15,7 @@ export const Contact = () => {
           ))}
         </div>
 
-        <div className="container mx-auto pt-12 md:pt-16 pb-16 px-8 md:px-24 relative">
+        <div className="container mx-auto pt-12 md:pt-16 pb-16 px-4 sm:px-8 md:px-16 lg:px-24 relative">
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -38,8 +38,8 @@ export const Contact = () => {
 
       {/* Main Content (White) */}
       <div className="w-full bg-white flex-grow relative flex flex-col">
-        <div className="container mx-auto pt-16 pb-24 px-8 md:px-24 flex-grow relative flex flex-col">
-          <div className="max-w-4xl space-y-8 mb-16">
+        <div className="container mx-auto pt-12 md:pt-16 pb-20 md:pb-24 px-4 sm:px-8 md:px-16 lg:px-24 flex-grow relative flex flex-col">
+          <div className="max-w-4xl space-y-6 md:space-y-8 mb-12 md:mb-16">
             <p className="text-lg md:text-xl text-stratova-dark font-medium leading-relaxed text-justify">
               Partner with Stratova to unlock strategic opportunities and sustainable growth.
             </p>
@@ -50,47 +50,130 @@ export const Contact = () => {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row w-full gap-16 justify-between items-center">
-            {/* Left: Contact Info */}
-            <div className="flex flex-col gap-10 items-start w-full lg:w-1/2">
-              <h3 className="text-3xl md:text-4xl font-black text-stratova-dark italic mb-2 text-left">CONTACT US</h3>
-              
-              <div className="flex flex-col gap-6 md:gap-8 w-full">
-                <div className="flex items-center justify-start gap-4 md:gap-6">
-                  <div className="w-12 h-12 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-md">
-                    <Phone size={24} fill="currentColor" />
-                  </div>
-                  <span className="text-xl md:text-2xl font-medium text-stratova-dark">+94 077 611 0005</span>
+          <div className="w-full relative z-10">
+            <h3 className="text-3xl md:text-4xl font-black text-stratova-dark italic mb-8 md:mb-12 text-left">
+              CONTACT US
+            </h3>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 w-full">
+              {/* Sri Lanka */}
+              <div className="flex flex-col gap-5 w-full">
+                <div className="flex items-center gap-3">
+                  <div className="w-2.5 h-6 bg-stratova-green rounded-full shrink-0"></div>
+                  <h4 className="text-xl sm:text-2xl font-black text-stratova-dark uppercase tracking-tight">
+                    SRI LANKA
+                  </h4>
                 </div>
-                
-                <div className="flex items-center justify-start gap-4 md:gap-6">
-                  <div className="w-12 h-12 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-md">
-                    <Globe size={24} />
+
+                <div className="flex flex-col gap-4 w-full">
+                  <a 
+                    href="tel:+940776110005" 
+                    className="flex items-center gap-3 md:gap-4 group w-fit"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-stratova-dark group-hover:bg-stratova-blue flex items-center justify-center text-white shrink-0 shadow-sm transition-colors">
+                      <Phone size={18} fill="currentColor" />
+                    </div>
+                    <span className="text-sm md:text-base font-medium text-stratova-dark group-hover:text-stratova-blue transition-colors">
+                      +94 077 611 0005
+                    </span>
+                  </a>
+
+                  <a 
+                    href="https://www.stratova.lk" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-3 md:gap-4 group w-fit"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-stratova-dark group-hover:bg-stratova-blue flex items-center justify-center text-white shrink-0 shadow-sm transition-colors">
+                      <Globe size={18} />
+                    </div>
+                    <span className="text-sm md:text-base font-medium text-stratova-dark group-hover:text-stratova-blue transition-colors">
+                      www.stratova.lk
+                    </span>
+                  </a>
+
+                  <a 
+                    href="mailto:office@stratova.lk" 
+                    className="flex items-center gap-3 md:gap-4 group w-fit"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-stratova-dark group-hover:bg-stratova-blue flex items-center justify-center text-white shrink-0 shadow-sm transition-colors">
+                      <Mail size={18} />
+                    </div>
+                    <span className="text-sm md:text-base font-medium text-stratova-dark group-hover:text-stratova-blue transition-colors">
+                      office@stratova.lk
+                    </span>
+                  </a>
+
+                  <div className="flex items-center gap-3 md:gap-4 text-left">
+                    <div className="w-10 h-10 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-sm shrink-0">
+                      <MapPin size={18} />
+                    </div>
+                    <span className="text-sm md:text-base font-medium text-stratova-dark leading-snug">
+                      78, Havelock Road, Colombo 00500, Sri Lanka
+                    </span>
                   </div>
-                  <span className="text-xl md:text-2xl font-medium text-stratova-dark">www.stratova.lk</span>
                 </div>
-                
-                <div className="flex items-center justify-start gap-4 md:gap-6">
-                  <div className="w-12 h-12 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-md">
-                    <Mail size={24} />
-                  </div>
-                  <span className="text-xl md:text-2xl font-medium text-stratova-dark">office@stratova.lk</span>
+              </div>
+
+              {/* Malaysia */}
+              <div className="flex flex-col gap-5 w-full">
+                <div className="flex items-center gap-3">
+                  <div className="w-2.5 h-6 bg-stratova-green rounded-full shrink-0"></div>
+                  <h4 className="text-xl sm:text-2xl font-black text-stratova-dark uppercase tracking-tight">
+                    MALAYSIA
+                  </h4>
                 </div>
-                
-                <div className="flex flex-row items-center justify-start gap-4 md:gap-6 text-left">
-                  <div className="w-12 h-12 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-md">
-                    <MapPin size={24} />
+
+                <div className="flex flex-col gap-4 w-full">
+                  <div className="flex items-center gap-3 md:gap-4 text-left">
+                    <div className="w-10 h-10 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-sm shrink-0">
+                      <User size={18} />
+                    </div>
+                    <span className="text-sm md:text-base font-medium text-stratova-dark leading-snug">
+                      <strong className="font-bold">Vijaya Kumar Govindasamy</strong> - Director
+                    </span>
                   </div>
-                  <span className="text-xl md:text-2xl font-medium text-stratova-dark">78, Havelock Road, Colombo 00500, Sri Lanka</span>
+
+                  <a 
+                    href="tel:+60126111219" 
+                    className="flex items-center gap-3 md:gap-4 group w-fit"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-stratova-dark group-hover:bg-stratova-blue flex items-center justify-center text-white shrink-0 shadow-sm transition-colors">
+                      <Phone size={18} fill="currentColor" />
+                    </div>
+                    <span className="text-sm md:text-base font-medium text-stratova-dark group-hover:text-stratova-blue transition-colors">
+                      +60 12-611 1219
+                    </span>
+                  </a>
+
+                  <a 
+                    href="mailto:vijayakumar.cpa@gmail.com" 
+                    className="flex items-center gap-3 md:gap-4 group w-fit"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-stratova-dark group-hover:bg-stratova-blue flex items-center justify-center text-white shrink-0 shadow-sm transition-colors">
+                      <Mail size={18} />
+                    </div>
+                    <span className="text-sm md:text-base font-medium text-stratova-dark group-hover:text-stratova-blue transition-colors">
+                      vijayakumar.cpa@gmail.com
+                    </span>
+                  </a>
+
+                  <div className="flex items-center gap-3 md:gap-4 text-left">
+                    <div className="w-10 h-10 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-sm shrink-0">
+                      <MapPin size={18} />
+                    </div>
+                    <span className="text-sm md:text-base font-medium text-stratova-dark leading-snug">
+                      Suite 612, Level 6, Block A3, Leisure Commerce Square, NO. 9, Jalan PJS 8/9, 46150 Petaling Jaya Selangor, Malaysia
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
         {/* Right: Creative Uneven Static Green Dots Pattern - Absolute at Bottom Right */}
-        <div className="hidden lg:block absolute bottom-0 right-0 z-0 pointer-events-none">
+        <div className="hidden lg:block absolute bottom-0 right-0 z-0 pointer-events-none opacity-40">
           <div className="grid grid-cols-12 gap-4 md:gap-5 pb-8 pr-4 md:pr-8">
             {[...Array(192)].map((_, i) => {
               const row = Math.floor(i / 12);
@@ -137,8 +220,6 @@ export const Contact = () => {
           </div>
         </div>
       </div>
-
-
 
     </section>
   );
