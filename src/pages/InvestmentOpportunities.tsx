@@ -203,9 +203,14 @@ export const InvestmentOpportunities = () => {
                         <button className="bg-[#f58f29] hover:bg-[#e07b1a] text-white text-xs font-bold py-1.5 px-4 rounded transition-colors w-full">
                           View
                         </button>
-                        <button className="bg-white border border-[#25D366] text-[#25D366] hover:bg-[#f0fbf4] text-xs font-bold py-1.5 px-4 rounded transition-colors w-full">
+                        <a
+                          href={`https://wa.me/94776110005?text=${encodeURIComponent(`Hello Stratova, I am interested in Opportunity ${opp.id}: ${opp.sector} (${opp.location}).`)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white text-xs font-bold py-1.5 px-4 rounded transition-colors w-full text-center block"
+                        >
                           WhatsApp
-                        </button>
+                        </a>
                       </div>
                     </td>
                     <td className="py-5 px-6 text-center">

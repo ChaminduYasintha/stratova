@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Footer } from './Footer';
+import { FloatingWhatsApp } from './FloatingWhatsApp';
+
+interface NavItem {
+  name: string;
+  href: string;
+  isRouterLink?: boolean;
+  subItems?: { name: string; href: string }[];
+}
 
 export const Layout = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +27,7 @@ export const Layout = () => {
 
   const isHome = location.pathname === '/';
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { name: 'Home', href: isHome ? '#' : '/#' },
     { 
       name: 'About', 
@@ -39,7 +47,7 @@ export const Layout = () => {
         { name: 'Support Services', href: isHome ? '#support-services' : '/#support-services' }
       ]
     },
-    { name: 'Investment offers', href: '/investments', isRouterLink: true },
+    // { name: 'Investment offers', href: '/investments', isRouterLink: true },
     { name: 'Leadership', href: isHome ? '#leadership' : '/#leadership' },
     { name: 'Contact', href: isHome ? '#contact' : '/#contact' },
   ];
@@ -157,6 +165,7 @@ export const Layout = () => {
       </main>
       
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };
