@@ -1,5 +1,4 @@
-import React from 'react';
-import { Phone, Mail, Globe, MapPin, User } from 'lucide-react';
+import { Phone, Mail, Globe, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export const Contact = () => {
@@ -125,15 +124,6 @@ export const Contact = () => {
                 </div>
 
                 <div className="flex flex-col gap-4 w-full">
-                  <div className="flex items-center gap-3 md:gap-4 text-left">
-                    <div className="w-10 h-10 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-sm shrink-0">
-                      <User size={18} />
-                    </div>
-                    <span className="text-sm md:text-base font-medium text-stratova-dark leading-snug">
-                      <strong className="font-bold">Vijaya Kumar Govindasamy</strong> - Director
-                    </span>
-                  </div>
-
                   <a 
                     href="tel:+60126111219" 
                     className="flex items-center gap-3 md:gap-4 group w-fit"
