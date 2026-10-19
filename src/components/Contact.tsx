@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 export const Contact = () => {
   return (
     <section id="contact" className="w-full flex flex-col relative overflow-hidden bg-white min-h-[100svh]">
-      
+
       {/* Top Header Section (Dark Blue) */}
       <div className="w-full bg-stratova-dark relative">
         {/* Top Right Green Dots Pattern */}
@@ -16,7 +16,7 @@ export const Contact = () => {
 
         <div className="container mx-auto pt-12 md:pt-16 pb-16 px-4 sm:px-8 md:px-16 lg:px-24 relative">
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -24,7 +24,7 @@ export const Contact = () => {
           >
             <h2 className="text-4xl md:text-5xl font-light text-stratova-blue mb-1 tracking-tight">GET</h2>
             <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-[0.9] mb-8">IN TOUCH</h2>
-            
+
             {/* Three green dots */}
             <div className="flex gap-2">
               <div className="w-4 h-4 bg-stratova-green"></div>
@@ -65,8 +65,8 @@ export const Contact = () => {
                 </div>
 
                 <div className="flex flex-col gap-4 w-full">
-                  <a 
-                    href="tel:+940776110005" 
+                  <a
+                    href="tel:+940776110005"
                     className="flex items-center gap-3 md:gap-4 group w-fit"
                   >
                     <div className="w-10 h-10 rounded-full bg-stratova-dark group-hover:bg-stratova-blue flex items-center justify-center text-white shrink-0 shadow-sm transition-colors">
@@ -77,10 +77,10 @@ export const Contact = () => {
                     </span>
                   </a>
 
-                  <a 
-                    href="https://www.stratova.lk" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://www.stratova.lk"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 md:gap-4 group w-fit"
                   >
                     <div className="w-10 h-10 rounded-full bg-stratova-dark group-hover:bg-stratova-blue flex items-center justify-center text-white shrink-0 shadow-sm transition-colors">
@@ -91,8 +91,8 @@ export const Contact = () => {
                     </span>
                   </a>
 
-                  <a 
-                    href="mailto:office@stratova.lk" 
+                  <a
+                    href="mailto:office@stratova.lk"
                     className="flex items-center gap-3 md:gap-4 group w-fit"
                   >
                     <div className="w-10 h-10 rounded-full bg-stratova-dark group-hover:bg-stratova-blue flex items-center justify-center text-white shrink-0 shadow-sm transition-colors">
@@ -103,14 +103,14 @@ export const Contact = () => {
                     </span>
                   </a>
 
-                  <div className="flex items-center gap-3 md:gap-4 text-left">
+                  {/* <div className="flex items-center gap-3 md:gap-4 text-left">
                     <div className="w-10 h-10 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-sm shrink-0">
                       <MapPin size={18} />
                     </div>
                     <span className="text-sm md:text-base font-medium text-stratova-dark leading-snug">
                       78, Havelock Road, Colombo 00500, Sri Lanka
-                    </span>
-                  </div>
+                    </span> 
+                  </div> */}
                 </div>
               </div>
 
@@ -124,8 +124,8 @@ export const Contact = () => {
                 </div>
 
                 <div className="flex flex-col gap-4 w-full">
-                  <a 
-                    href="tel:+60126111219" 
+                  <a
+                    href="tel:+60126111219"
                     className="flex items-center gap-3 md:gap-4 group w-fit"
                   >
                     <div className="w-10 h-10 rounded-full bg-stratova-dark group-hover:bg-stratova-blue flex items-center justify-center text-white shrink-0 shadow-sm transition-colors">
@@ -136,8 +136,8 @@ export const Contact = () => {
                     </span>
                   </a>
 
-                  <a 
-                    href="mailto:vijayakumar.cpa@gmail.com" 
+                  <a
+                    href="mailto:vijayakumar.cpa@gmail.com"
                     className="flex items-center gap-3 md:gap-4 group w-fit"
                   >
                     <div className="w-10 h-10 rounded-full bg-stratova-dark group-hover:bg-stratova-blue flex items-center justify-center text-white shrink-0 shadow-sm transition-colors">
@@ -148,14 +148,14 @@ export const Contact = () => {
                     </span>
                   </a>
 
-                  <div className="flex items-center gap-3 md:gap-4 text-left">
+                  {/* <div className="flex items-center gap-3 md:gap-4 text-left">
                     <div className="w-10 h-10 rounded-full bg-stratova-dark flex items-center justify-center text-white shrink-0 shadow-sm shrink-0">
                       <MapPin size={18} />
                     </div>
                     <span className="text-sm md:text-base font-medium text-stratova-dark leading-snug">
                       Suite 612, Level 6, Block A3, Leisure Commerce Square, NO. 9, Jalan PJS 8/9, 46150 Petaling Jaya Selangor, Malaysia
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -168,32 +168,32 @@ export const Contact = () => {
             {[...Array(192)].map((_, i) => {
               const row = Math.floor(i / 12);
               const col = i % 12;
-              
+
               // A specific fixed pattern that dissolves towards the top-left (16x12)
               const pattern = [
                 // Top very sparse rows
-                [0,0,0,0,0,0,0,1,0,0,0,0],
-                [0,0,0,1,0,0,0,0,0,1,0,0],
-                [0,0,0,0,0,1,0,0,0,0,0,1],
-                [1,0,0,0,0,0,0,1,0,0,0,0],
-                [0,0,1,0,0,0,0,0,0,0,1,0],
-                [0,0,0,0,1,0,0,0,1,0,0,0],
-                [0,1,0,0,0,0,1,0,0,0,0,1],
-                [0,0,0,1,0,0,0,0,0,1,0,0],
+                [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+                [0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0],
+                [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1],
+                [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+                [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+                [0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+                [0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+                [0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0],
                 // Middle gradually denser
-                [0,0,0,1,0,0,0,1,0,0,0,1],
-                [0,0,0,0,0,1,0,0,0,1,1,0],
-                [0,1,0,0,1,0,0,1,0,0,1,1],
-                [0,0,1,0,0,1,1,0,1,1,0,1],
+                [0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1],
+                [0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0],
+                [0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1],
+                [0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1],
                 // Bottom dense
-                [1,0,0,1,0,1,1,1,0,1,1,1],
-                [0,1,1,0,1,1,1,1,1,1,1,1],
-                [1,0,1,1,1,1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1,1,1,1,1,1],
+                [1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1],
+                [0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+                [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
               ];
-              
+
               const val = pattern[row][col];
-              
+
               if (val === 0) {
                 return <div key={i} className="w-3 h-3 md:w-4 md:h-4"></div>;
               }
