@@ -25,6 +25,10 @@ export const Layout = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   const isHome = location.pathname === '/';
 
   const navItems: NavItem[] = [
@@ -47,7 +51,7 @@ export const Layout = () => {
         { name: 'Support Services', href: isHome ? '#support-services' : '/#support-services' }
       ]
     },
-    // { name: 'Investment offers', href: '/investments', isRouterLink: true },
+    { name: 'Investment Opportunities', href: '/investments', isRouterLink: true },
     { name: 'Leadership', href: isHome ? '#leadership' : '/#leadership' },
     { name: 'Contact', href: isHome ? '#contact' : '/#contact' },
   ];
@@ -77,7 +81,14 @@ export const Layout = () => {
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
                 {item.isRouterLink ? (
-                  <Link to={item.href} className="flex items-center gap-1 text-lg font-semibold tracking-wide text-stratova-dark hover:text-stratova-blue transition-colors py-2">
+                  <Link 
+                    to={item.href} 
+                    className={`flex items-center gap-1 text-lg font-semibold tracking-wide transition-colors py-2 ${
+                      location.pathname === item.href 
+                        ? 'text-stratova-blue font-bold' 
+                        : 'text-stratova-dark hover:text-stratova-blue'
+                    }`}
+                  >
                     {item.name}
                   </Link>
                 ) : (
@@ -115,7 +126,11 @@ export const Layout = () => {
                 {item.isRouterLink ? (
                   <Link
                     to={item.href}
-                    className="flex items-center justify-center gap-2 text-xl font-semibold text-stratova-dark hover:text-stratova-blue transition-colors px-8 py-3 w-full text-center"
+                    className={`flex items-center justify-center gap-2 text-xl font-semibold transition-colors px-8 py-3 w-full text-center ${
+                      location.pathname === item.href 
+                        ? 'text-stratova-blue font-bold' 
+                        : 'text-stratova-dark hover:text-stratova-blue'
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
